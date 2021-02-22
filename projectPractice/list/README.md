@@ -4,6 +4,9 @@
 - ul
 - li
 - body
+- p
+- img
+- span
 
 ### 1.1 引入css方式
 - `<link rel="stylesheet" href="./index.css">`
@@ -13,15 +16,18 @@
 - meta
 - title
 ## 2 css
+- display
 - width
 - margin(外边距)
     - padding-top
     - margin-top
 - padding(内边距)
 - min-height
+- line-height
 - font-size
 - font-weight
 - text-align
+- vertical-align
 - background-color
 - background-image
 - background-size
