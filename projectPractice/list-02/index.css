@@ -17,12 +17,23 @@ h1 {
 body {
   background-color: #f0f2f5;
 }
-
+.guiter{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100px;
+  z-index: 2;
+}
 .header {
+  position: fixed;
+  top: 0;
+  width: 100%;
   padding: 0 160px;
   height: 64px;
   line-height: 64px;
   background-color: #001529;
+  /*todo 先去掉看看*/
+  z-index: 1;
 }
 
 .header .item {
@@ -52,15 +63,27 @@ body {
 }
 
 .content-box {
+  margin-top: 64px;
   padding: 0 160px;
 }
 
 .title-tips {
-  padding: 10px 15px;
+  position: relative;
+  padding: 10px 40px;
   background-color: #f6ffed;
   font-size: 14px;
 }
 
+.title-tips .close-icon{
+  position: absolute;
+  right: 20px;
+  top: 12px;
+}
+.title-tips .smile-icon{
+  position: absolute;
+  left: 20px;
+  top: 12px;
+}
 .title-tips .smile-icon,
 .title-tips .close-icon,
 .github .smile-icon {

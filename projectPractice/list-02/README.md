@@ -16,6 +16,8 @@
 - meta
 - title
 ## 2 css
+- position
+    - top
 - display
 - width
 - margin(外边距)
@@ -34,6 +36,7 @@
 - background-position
 - background-repeat
 - border-radius
+- z-index
 
 ### 2.1 优先级
 - id(唯一) 100
