@@ -25,8 +25,15 @@ body {
   background-color: #001529;
 }
 
+.header .list{
+  content: '';
+  display: block;
+  clear: both;
+  min-width: 300px;
+  height: 64px;
+}
 .header .item {
-  display: inline-block;
+  float: left;
   padding: 0 18px;
   color: rgba(255, 255, 255, 0.65);
 }
@@ -108,12 +115,20 @@ body {
   background-color: #e6f7ff;
   border: 1px solid #91d5ff;
 }
-
+.article-list-tips:after{
+  content: '';
+  display: block;
+  clear: both;
+}
 .article-list-tips .icon {
+  /*这里不适合浮动只做演示讲解*/
+  float: left;
   display: inline-block;
+  width: 50px;
 }
 
 .article-list-tips .content {
+  float: right;
   display: inline-block;
 }
 

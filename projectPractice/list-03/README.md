@@ -16,6 +16,7 @@
 - meta
 - title
 ## 2 css
+- float
 - display
 - width
 - margin(外边距)
@@ -52,3 +53,6 @@
 `inline inline-block block` 区别
 - margin
 - padding
+### 2.5 浮动
+- 特点：内容撑开宽高
+- 应用场景：1.文字环绕 2.横向排列
