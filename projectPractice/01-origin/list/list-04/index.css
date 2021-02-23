@@ -12,6 +12,9 @@ h1 {
   font-size: 16px;
   font-weight: normal;
 }
+a{
+  text-decoration: none;
+}
 
 /*-------------------清除默认样式 end-------------------------------*/
 body {
@@ -190,6 +193,12 @@ body {
   background-color: rgba(1, 126, 102, 0.08);
   font-size: 13px;
 }
+.article-list-item .tag:hover{
+  color: white;
+  background-color: #017E66;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
 
 .article-list-item .extra-info {
   color: rgba(0, 0, 0, 0.45);
@@ -232,5 +241,8 @@ body {
 .article-list-pages .item.active {
   color: #017E66;
   border: 1px solid #017E66;
+}
+.article-list-pages .next{
+  cursor: pointer;
 }
 
