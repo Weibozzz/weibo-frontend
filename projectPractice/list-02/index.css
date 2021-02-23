@@ -1,0 +1,213 @@
+/*--------------------清除默认样式 start----------------------------*/
+h1, ul, li, body, p {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+h1 {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+/*-------------------清除默认样式 end-------------------------------*/
+body {
+  background-color: #f0f2f5;
+}
+
+.header {
+  padding: 0 160px;
+  height: 64px;
+  line-height: 64px;
+  background-color: #001529;
+}
+
+.header .item {
+  display: inline-block;
+  padding: 0 18px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.header .item.active {
+  color: rgba(255, 255, 255, 1);
+  background-color: #017e66;
+}
+
+.footer {
+  margin: 28px 0;
+  text-align: center;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.copy-name {
+  margin-bottom: 18px;
+}
+
+.copy-name .name {
+  color: #017e66;
+}
+
+.content-box {
+  padding: 0 160px;
+}
+
+.title-tips {
+  padding: 10px 15px;
+  background-color: #f6ffed;
+  font-size: 14px;
+}
+
+.title-tips .smile-icon,
+.title-tips .close-icon,
+.github .smile-icon {
+  width: 16px;
+  vertical-align: middle;
+}
+
+.title-tips .smile-icon {
+  margin-right: 6px;
+}
+
+.github {
+  display: inline-block;
+  border: 1px solid #d9d9d9;
+}
+
+.github-title, .github-star {
+  display: inline-block;
+  padding: 5px 14px;
+}
+
+.github-star {
+  background-color: #ffffff;
+  border-left: 1px solid #d9d9d9;
+}
+
+.article {
+  background-color: white;
+}
+
+.article-list {
+  /*width: 900px;*/
+}
+
+.article-list .article-box {
+  padding: 0 20px;
+}
+
+.article-extra {
+  width: 400px;
+}
+
+.article-list-tips {
+  padding: 15px 20px;
+  background-color: #e6f7ff;
+  border: 1px solid #91d5ff;
+}
+
+.article-list-tips .icon {
+  display: inline-block;
+}
+
+.article-list-tips .content {
+  display: inline-block;
+}
+
+.article-list-tips .tips {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.article-list-tips .cont {
+  margin-top: 10px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.article-list-tips .mark {
+  color: #017e66;
+}
+
+.article-list-item .article-type-icon {
+  width: 40px;
+}
+
+.article-list-item .item-left {
+  display: inline-block;
+}
+
+.article-list-item .item-right {
+  display: inline-block;
+}
+
+.article-list-item .icon {
+  width: 10px;
+}
+
+.article-list-item .item {
+  padding: 16px 0;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.article-list-item .title-box {
+  margin-bottom: 26px;
+}
+
+.article-list-item .tag {
+  display: inline-block;
+  height: 22px;
+  padding: 0 5px;
+  margin-right: 10px;
+  line-height: 22px;
+  color: #017E66;
+  background-color: rgba(1, 126, 102, 0.08);
+  font-size: 13px;
+}
+
+.article-list-item .extra-info {
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 14px;
+}
+
+.article-list-item .time {
+  margin-right: 10px;
+}
+
+.article-list-item .icon-info {
+  padding: 0 10px;
+  border-left: 1px solid #d9d9d9;
+}
+
+.article-list-pages {
+  padding-top: 15px;
+  padding-bottom: 20px;
+}
+
+.article-list-pages .tips {
+  font-size: 14px;
+  color: rgb(153, 153, 153);
+}
+
+.article-list-pages .list {
+  display: inline-block;
+}
+
+.article-list-pages .item {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.65);
+  border: 1px solid #d9d9d9;
+}
+
+.article-list-pages .item.active {
+  color: #017E66;
+  border: 1px solid #017E66;
+}
+
