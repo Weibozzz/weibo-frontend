@@ -13,6 +13,7 @@
 - meta
 - title
 ## 2 css
+- float
 - position
     - top
 - width
@@ -58,3 +59,7 @@ div{
 - margin
 - padding
 
+
+### 2.6 浮动
+- 特点：内容撑开宽高
+- 应用场景：1.文字环绕 2.横向排列
