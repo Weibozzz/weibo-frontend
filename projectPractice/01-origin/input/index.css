@@ -14,7 +14,7 @@ h1 {
 }
 
 /*-------------------清除默认样式 end-------------------------------*/
-input {
+input,textarea {
   width: 400px;
   height: 26px;
   padding: 6px 11px;
@@ -23,7 +23,8 @@ input {
   outline: none;
 }
 
-input:focus {
+input:focus,
+textarea:focus {
   /*border-color: #178a6f;*/
   border: 1px solid #178a6f;
   outline: 0;
