@@ -4,11 +4,12 @@
 - ul
 - li
 - body
+- a
 
 ### 1.1 引入css方式
 - `<link rel="stylesheet" href="./index.css">`
 ### 1.2 自带边距和样式
-- h1,ul,li,body
+- h1,ul,li,body,a
 ### 1.3 head 里标签
 - meta
 - title
@@ -25,6 +26,7 @@
 - font-size
 - font-weight
 - text-align
+- text-decoration
 - background-color
 - background-image
 - background-size
@@ -32,6 +34,8 @@
 - background-repeat
 - border-radius
 - z-index
+- cursor
+- transition
 
 ### 2.1 优先级
 - id(唯一) 100
