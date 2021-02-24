@@ -1,3 +1,10 @@
+## node安装
+<http://nodejs.cn/download/>
+### window
+下载 `.msi` 文件，然后傻瓜式一直安装
+### mac
+下载 `.pkg` 文件
+
 ## npm
 包管理工具
  
