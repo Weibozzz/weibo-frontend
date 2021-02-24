@@ -19,16 +19,20 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  transition: All 2s ease;
 }
 
 .container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 800px;
-  margin: 0 auto;
   /*margin-top: 100px; todo 超出隐藏*/
   font-size: 14px;
   color: white;
   background-color: rgba(0, 0, 0, .3);
   border-radius: 20px;
+  transform: translate(-50%, -50%);
 }
 
 
@@ -65,6 +69,10 @@ h1 {
   margin-bottom: 15px;
   background-color: rgba(0, 0, 0, .5);
   border-radius: 6px;
+}
+.item a{
+  color: white;
+  text-decoration: none;
 }
 .last-item{
   margin-bottom: 0;

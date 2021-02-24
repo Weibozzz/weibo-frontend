@@ -44,6 +44,9 @@ body {
   padding: 0 18px;
   color: rgba(255, 255, 255, 0.65);
 }
+.header .item a{
+  color: rgba(255, 255, 255, 0.65);
+}
 
 .header .item.active {
   color: rgba(255, 255, 255, 1);
