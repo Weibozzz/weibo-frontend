@@ -1,0 +1,26 @@
+/*--------------------清除默认样式 start----------------------------*/
+h1, ul, li, body, p {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+h1 {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+/*-------------------清除默认样式 end-------------------------------*/
+select{
+  width: 200px;
+  height: 40px;
+  outline: none;
+  border: 1px solid #178a6f;
+  box-shadow: 0 0 0 2px rgba(1, 126, 102, .2)
+}
+option{
+  height: 30px;
+}
