@@ -5,6 +5,8 @@
 - li
 - body
 - a
+- input
+- select
 
 ### 1.1 引入css方式
 - `<link rel="stylesheet" href="./index.css">`
@@ -36,6 +38,8 @@
 - z-index
 - cursor
 - transition
+- outline
+- box-shadow
 
 ### 2.1 优先级
 - id(唯一) 100
