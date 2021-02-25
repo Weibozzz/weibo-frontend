@@ -14,9 +14,16 @@ h1 {
 }
 
 /*-------------------清除默认样式 end-------------------------------*/
-input,textarea {
+input {
   width: 400px;
   height: 26px;
+  padding: 6px 11px;
+  border: 1px solid #d9d9d9;
+  transition: all 0.3s;
+  outline: none;
+}
+.textarea{
+
   padding: 6px 11px;
   border: 1px solid #d9d9d9;
   transition: all 0.3s;
