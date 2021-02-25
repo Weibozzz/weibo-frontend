@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+<!--input演示-->
+<div>
+  <input class="input" id="input-demo" type="number"><span id="tip"></span>
+  <div id="focus">请输入123</div>
+</div>
+<hr>
+<!--select演示-->
+<div>
+  <select id="select">
+    <option value="1">男</option>
+    <option value="2">女</option>
+  </select>
+</div>
+<!--单选-->
+<div>
+  <p>Select a maintenance drone:</p>
+
+  <div>
+    <input type="radio" id="huey" name="drone" value="huey"
+           checked>
+    <label for="huey">Huey</label>
+  </div>
+
+  <div>
+    <input type="radio" id="dewey" name="drone" value="dewey">
+    <label for="dewey">Dewey</label>
+  </div>
+
+  <div>
+    <input type="radio" id="louie" name="drone" value="louie">
+    <label for="louie">Louie</label>
+  </div>
+
+</div>
+<hr>
+<!--多选-->
+<div>
+  <p>
+    <input type="checkbox" id="cbox1" value="first_checkbox" name="checkbox">
+    <label for="cbox1">This is the first checkbox</label>
+  </p>
+  <p>
+    <input type="checkbox" id="cbox2" value="second_checkbox" checked="checked" name="checkbox">
+    <label for="cbox2">This is the second checkbox, which is checked</label>
+  </p>
+</div>
+<hr>
+<!--form-->
+<form>
+  <div>
+    <label for="nickname">昵称：</label>
+    <input class="input" id="nickname" type="text" maxlength="10" name="nickname">
+  </div>
+  <div>
+    <label for="hobby">爱好：</label>
+    <select id="hobby" name="hobby" multiple>
+      <option value="ping-pong">乒乓球</option>
+      <option value="Basketball">篮球</option>
+      <option value="Football">足球</option>
+    </select>
+  </div>
+  <div>
+    性别：
+    <div>
+      <input type="radio" id="man" name="sex" value="man">
+      <label for="man">男</label>
+    </div>
+
+    <div>
+      <input type="radio" id="women" name="sex" value="women">
+      <label for="women">女</label>
+    </div>
+  </div>
+  <div>
+    <label for="email">邮箱：</label>
+    <input id="email" type="email" name="email">
+  </div>
+  <div>
+    <label for="website">网址：</label>
+    <input id="website" type="url" name="website">
+  </div>
+  <div>
+    <label for="comment">评论：</label>
+    <textarea class="textarea" id="comment" name="comment"></textarea>
+  </div>
+  <div>
+    <button id="submit" type="submit">提交</button>
+    <button id="reset" type="reset">清空</button>
+  </div>
+  </div>
+</form>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
