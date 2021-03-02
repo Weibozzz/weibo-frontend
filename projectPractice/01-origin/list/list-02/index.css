@@ -19,21 +19,20 @@ body {
 }
 .guiter{
   position: fixed;
-  top: 0;
-  right: 0;
+  top: 14px;
+  right: -17px;
   width: 100px;
-  z-index: 2;
+  z-index: 1;
 }
 .header {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   padding: 0 160px;
   height: 64px;
   line-height: 64px;
   background-color: #001529;
-  /*todo 先去掉看看*/
-  z-index: 1;
 }
 
 .header .item {
@@ -70,19 +69,17 @@ body {
 .title-tips {
   position: relative;
   padding: 10px 40px;
+  padding-left: 12px;
   background-color: #f6ffed;
   font-size: 14px;
 }
 
+
+
 .title-tips .close-icon{
   position: absolute;
-  right: 20px;
   top: 12px;
-}
-.title-tips .smile-icon{
-  position: absolute;
-  left: 20px;
-  top: 12px;
+  right: 24px;
 }
 .title-tips .smile-icon,
 .title-tips .close-icon,
