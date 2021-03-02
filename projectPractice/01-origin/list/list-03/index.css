@@ -17,23 +17,26 @@ h1 {
 body {
   background-color: #f0f2f5;
 }
-
+.guiter{
+  position: fixed;
+  top: 14px;
+  right: -17px;
+  width: 100px;
+  z-index: 1;
+}
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   padding: 0 160px;
   height: 64px;
   line-height: 64px;
   background-color: #001529;
 }
 
-.header .list{
-  content: '';
-  display: block;
-  clear: both;
-  min-width: 300px;
-  height: 64px;
-}
 .header .item {
-  float: left;
+  display: inline-block;
   padding: 0 18px;
   color: rgba(255, 255, 255, 0.65);
 }
@@ -59,15 +62,25 @@ body {
 }
 
 .content-box {
+  margin-top: 64px;
   padding: 0 160px;
 }
 
 .title-tips {
-  padding: 10px 15px;
+  position: relative;
+  padding: 10px 40px;
+  padding-left: 12px;
   background-color: #f6ffed;
   font-size: 14px;
 }
 
+
+
+.title-tips .close-icon{
+  position: absolute;
+  top: 12px;
+  right: 24px;
+}
 .title-tips .smile-icon,
 .title-tips .close-icon,
 .github .smile-icon {
@@ -115,20 +128,12 @@ body {
   background-color: #e6f7ff;
   border: 1px solid #91d5ff;
 }
-.article-list-tips:after{
-  content: '';
-  display: block;
-  clear: both;
-}
+
 .article-list-tips .icon {
-  /*这里不适合浮动只做演示讲解*/
-  float: left;
   display: inline-block;
-  width: 50px;
 }
 
 .article-list-tips .content {
-  float: right;
   display: inline-block;
 }
 
