@@ -58,4 +58,30 @@ router.get('/daily', async function (req, res, next) {
     })
   }
 })
+router.get('/tag', async function (req, res, next) {
+  res.send({
+    success: [
+      {
+        index: 1,
+        name: '全部文章',
+        href: 'http://www.baidu.com',
+        target: false,
+      },
+      {
+        index: 20,
+        name: 'js',
+      },
+    ]
+  })
+})
+router.get('/form', async function (req, res, next) {
+  res.send({
+    success: req.query
+  })
+})
+router.post('/form', async function (req, res, next) {
+  res.send({
+    success: req.body
+  })
+})
 module.exports = router;
