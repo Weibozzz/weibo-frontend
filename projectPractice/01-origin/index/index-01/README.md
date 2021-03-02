@@ -20,13 +20,25 @@
 - padding(内边距)
 - min-height
 - font-size
+  - px
 - font-weight
+    - normal
+    - bold/700/bolder
 - text-align
+  - left
+  - center
+  - right
+- color
 - background-color
 - background-image
 - background-size
+  - cover
+  - contain
+  - 100%
 - background-position
+  - center
 - background-repeat
+  - repeat
 - border-radius
 
 ### 2.1 优先级
@@ -41,3 +53,6 @@
 
 ### 2.3 上下居中
 
+### 2.4 行块区别
+- 块标签可以设置宽高，内边距，外边距
+- 行标签不可以设置宽高，不可以设置外边距的上下。
