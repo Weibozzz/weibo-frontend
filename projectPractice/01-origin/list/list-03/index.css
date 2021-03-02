@@ -36,9 +36,14 @@ body {
 }
 
 .header .item {
-  display: inline-block;
+  float: left;
   padding: 0 18px;
   color: rgba(255, 255, 255, 0.65);
+}
+.header .list:after{
+  content: '';
+  display: block;
+  clear: both;
 }
 
 .header .item.active {

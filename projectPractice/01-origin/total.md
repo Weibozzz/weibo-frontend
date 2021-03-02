@@ -17,8 +17,12 @@
 - title
 ## 2 css
 - float
+  - left
+  - right
+  - none
 - position
-    - top
+  - static relative absolute fixed
+  - top
 - width
 - margin(外边距)
     - padding-top
