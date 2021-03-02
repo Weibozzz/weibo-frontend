@@ -25,36 +25,20 @@ select 源码
 ## 5 js
 js 源码
 ### 5.1 array
-- 变量
-- 数据类型
-- dom操作
-- dom获取方式
-- 循环
+相关标签源码
 ### 5.2 date
-- function
-    - 看5.5例子
-- date 取值
-- object
-- number
-- string
+博客时间处理
 ### 5.3 random
-- Math
-    - random
-    - cell
-    - floor
-    - fround
-    - max
-    - min
+博客详情页广告随机
 ### 5.4 bom
+bom
 ### 5.5 time
-- setInterval
+此刻时间
 ### 5.6 event(事件)
-- click
-- mouseover
-- mouseout
+事件
 ### 5.7 form(表单)
-- input
-    - type
-        - radio
-        - checkbox
-        - number
+博客评论源码
+### 6 ajax
+ajax学习源码
+### 7 mobile
+手机端布局

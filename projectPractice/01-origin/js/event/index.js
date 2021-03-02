@@ -27,6 +27,7 @@ function eventList(){
   //   }
   // }
   ul.addEventListener('click', function (event) {
+    // 事件委托 好处 1. 避免重复多个事件  2. 未来元素也可以加上事件
     event.stopPropagation()
     console.log(event.target)
     console.log(event.target.innerText)

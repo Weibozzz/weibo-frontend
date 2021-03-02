@@ -42,6 +42,7 @@ function formDemo () {
     // 3. 黄金
     // console.log(serialize(arr))
     console.log(serializeJSON(arr))
+    console.log(JSON.stringify(serializeJSON(arr)))
     e.preventDefault()
     // console.log($('form').serialize())
     // console.log($("form").serializeArray())
