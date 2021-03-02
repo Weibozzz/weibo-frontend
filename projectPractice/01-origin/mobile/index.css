@@ -2,7 +2,6 @@
 h1, ul, li, body {
   margin: 0;
   padding: 0;
-  font-size: 16px;
 }
 li{
   list-style: none;
@@ -12,10 +11,13 @@ h1 {
 }
 
 /*-------------------清除默认样式 end-------------------------------*/
+html{
+  font-size: 16px;
+}
 body {
   /*todo vh*/
   min-height: 100vh;
-  background-image: url('http://images.static.liuweibo.cn/image/index/zhoulou.jpg');
+  /*background-image: url('http://images.static.liuweibo.cn/image/index/zhoulou.jpg');*/
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -26,7 +28,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 800px;
+  width: 50%;
   /*margin-top: 100px; todo 超出隐藏*/
   font-size: 14px;
   color: white;
@@ -34,8 +36,20 @@ body {
   border-radius: 20px;
   transform: translate(-50%, -50%);
 }
-
-
+@media screen
+and (min-width: 0px)
+and (max-width: 480px) {
+  .container {
+    width: 100%;
+  }
+}
+@media screen
+and (min-width: 481px)
+and (max-width: 900px) {
+  .container {
+    width: 80%;
+  }
+}
 .header {
   padding-top: 26px;
   margin-bottom: 38px;
@@ -60,7 +74,7 @@ h1 {
   border-bottom: 1px solid #ffffff;
 }
 .list{
-  width: 690px;
+  width: 80%;
   margin: 0 auto;
 }
 .item {

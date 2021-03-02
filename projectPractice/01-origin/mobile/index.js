@@ -33,10 +33,10 @@ function getRandom () {
 }
 const defaultIndexBg = 0
 const body = document.getElementsByTagName('body')[0]
-setInterval(()=>{
-  let random = getRandom()
-  if (random === defaultIndexBg) {
-    random = getRandom()
-  }
-  body.style.backgroundImage = `url(${BG_INDEX[random].value})`
-}, 3000)
+// setInterval(()=>{
+//   let random = getRandom()
+//   if (random === defaultIndexBg) {
+//     random = getRandom()
+//   }
+//   body.style.backgroundImage = `url(${BG_INDEX[random].value})`
+// }, 3000)
