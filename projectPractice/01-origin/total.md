@@ -45,6 +45,8 @@
 - outline
 - box-shadow
 - vertical-align: middle;
+- transform
+  - translate
 
 ### 2.1 优先级
 - id(唯一) 100

@@ -21,6 +21,3 @@ select{
   border: 1px solid #178a6f;
   box-shadow: 0 0 0 2px rgba(1, 126, 102, .2)
 }
-option{
-  height: 30px;
-}
