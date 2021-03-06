@@ -17,8 +17,12 @@
 - title
 ## 2 css
 - float
+  - left
+  - right
+  - none
 - position
-    - top
+  - static relative absolute fixed
+  - top
 - width
 - margin(外边距)
     - padding-top
@@ -41,6 +45,8 @@
 - outline
 - box-shadow
 - vertical-align: middle;
+- transform
+  - translate
 
 ### 2.1 优先级
 - id(唯一) 100
