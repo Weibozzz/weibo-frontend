@@ -1,10 +1,20 @@
-function getYearAndMounth (time) {
-  if (!time) return ''
-  const tt = new Date(Number(time) * 1000)
-  return tt.getFullYear() + '年' + String(+tt.getMonth() + 1)
-    .padStart(2, 0) + '月'
-}
-// 数组去重
+// for (var i = 0; i < arr.length; i++) {
+//   console.log(arr[i].createTime)
+// }
+console.log(arr)
+let strArr = []
+arr.forEach(function (item){
+  let crt = item.createTime
+  let date = new Date(crt * 1000)
+  // console.log(date)
+  let y = date.getFullYear()
+  let m = date.getMonth() + 1
+  let d = date.getDate()
+  const strDate = `${y}年${m}月${d}日`
+  strArr.push(strDate)
+})
+console.log(strArr)
+
 function cancelRepeat (arr) {
   let newArr = []
   let obj = {}
@@ -18,22 +28,13 @@ function cancelRepeat (arr) {
   }
   return obj
 }
-function getStrArr (arr){
-  let strArr = [];
-  for (let i = 0; i < arr.length; i++) {
-    strArr.push(getYearAndMounth(arr[i].createTime))
-  }
-  return strArr;
-}
-const strArr = getStrArr(arr)
-const result = cancelRepeat(strArr)
-// console.log(result)
-const keys = Object.keys(result)
-const values = Object.values(result)
-const container = document.getElementById('container')
-for (let i = 0; i < keys.length; i++) {
-  const item = keys[i]
+var resultObj = cancelRepeat(strArr)
+const keys = Object.keys(resultObj)
+const values = Object.values(resultObj)
+
+const dom = document.getElementById('container')
+keys.forEach(function (item,index){
   const div = document.createElement('div')
-  div.innerHTML = `<span>${item}(${values[i]})</span>`
-  container.appendChild(div)
-}
+  div.innerHTML = `<span class="time-item">${item}(${values[index]})</span>`
+  dom.appendChild(div)
+})

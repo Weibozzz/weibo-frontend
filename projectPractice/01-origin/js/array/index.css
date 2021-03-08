@@ -12,3 +12,6 @@
   transition: all 0.3s ease;
   cursor: pointer;
 }
+.tagBg{
+  background-color: green;
+}

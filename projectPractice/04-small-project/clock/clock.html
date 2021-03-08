@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>钟表</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    #clock{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 500px;
+      height: 500px;
+      background: linear-gradient(yellowgreen, orange);
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+    }
+    .in{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 460px;
+      height: 460px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0px 20px 10px #ccc inset;
+    }
+    .ss{
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      width: 4px;
+      height: 200px;
+      background-color: orange;
+      transform: translate(-50%, 0) rotate(0deg);
+      transform-origin: bottom center;
+    }
+    .ss:after{
+      content: '';
+      position: absolute;
+      bottom: -30px;
+      left: 0;
+      display: block;
+      width: 4px;
+      height: 30px;
+      background-color: orange;
+    }
+    .mm{
+      position: absolute;
+      top: 60px;
+      left: 50%;
+      width: 8px;
+      height: 190px;
+      background-color: blue;
+      transform: translate(-50%, 0);
+      transform-origin: bottom center;
+    }
+    .mm:after{
+      content: '';
+      position: absolute;
+      bottom: -25px;
+      left: 0;
+      display: block;
+      width: 8px;
+      height: 25px;
+      background-color: blue;
+    }
+    .hh{
+      position: absolute;
+      top: 80px;
+      left: 50%;
+      width: 12px;
+      height: 170px;
+      background-color: deeppink;
+      transform: translate(-50%, 0);
+      transform-origin: bottom center;
+    }
+    .hh:after{
+      content: '';
+      position: absolute;
+      bottom: -25px;
+      left: 0;
+      display: block;
+      width: 12px;
+      height: 25px;
+      background-color: deeppink;
+    }
+    .num{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 396px;
+      font-size: 30px;
+      font-weight: bold;
+      transform: translate(-50%, -50%)
+    }
+    .num:after{
+      content: '';
+      display: block;
+      clear: both;
+    }
+    .text1{
+      float: left;
+    }
+    .text2{
+      float: right;
+    }
+    .num2{
+      transform: translate(-50%, -50%) rotate(30deg);
+    }
+    .num2 .text1, .num2 .text2{
+      transform: rotate(-30deg);
+    }
+    .num3{
+      transform: translate(-50%, -50%) rotate(60deg);
+    }
+    .num3 .text1, .num3 .text2{
+      transform: rotate(-60deg);
+    }
+    .num4{
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+    .num4 .text1, .num4 .text2{
+      transform: rotate(-90deg);
+    }
+    .num5{
+      transform: translate(-50%, -50%) rotate(120deg);
+    }
+    .num5 .text1, .num5 .text2{
+      transform: rotate(-120deg);
+    }
+    .num6{
+      transform: translate(-50%, -50%) rotate(150deg);
+    }
+    .num6 .text1, .num6 .text2{
+      transform: rotate(-150deg);
+    }
+    .dot-center{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #ffffff;
+    }
+    .dot{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 448px;
+      transform: translate(-50%, -50%);
+    }
+    .dot:after{
+      content: '';
+      display: block;
+      clear: both;
+    }
+    .dot .left,
+    .dot .right{
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #000;
+    }
+    .dot .left{
+      float: left;
+    }
+    .dot .right{
+      float: right;
+    }
+    .dot_active .left,
+    .dot_active .right{
+      width: 16px;
+      height: 16px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+<div id="clock">
+  <div class="in"></div>
+  <div class="hh"></div>
+  <div class="mm"></div>
+  <div class="ss"></div>
+  <div class="dot-center"></div>
+  <div class="num num1">
+    <span class="text1">9</span><span class="text2">3</span>
+  </div>
+  <div class="num num2">
+    <span class="text1">10</span><span class="text2">4</span>
+  </div>
+  <div class="num num3">
+    <span class="text1">11</span><span class="text2">5</span>
+  </div>
+  <div class="num num4">
+    <span class="text1">12</span><span class="text2">6</span>
+  </div>
+  <div class="num num5">
+    <span class="text1">1</span><span class="text2">7</span>
+  </div>
+  <div class="num num6">
+    <span class="text1">2</span><span class="text2">8</span>
+  </div>
+  <div class="dot-container">
+
+  </div>
+</div>
+<script>
+  const ss = document.getElementsByClassName('ss')[0]
+  const mm = document.getElementsByClassName('mm')[0]
+  const hh = document.getElementsByClassName('hh')[0]
+  const dotContainer = document.getElementsByClassName('dot-container')[0]
+
+  setInterval(run,1000)
+  function run (){
+    const date = new Date()
+    const s = date.getSeconds()
+    const m = date.getMinutes()
+    const h = date.getHours()
+    const s_deg = s * 6
+    const m_deg = (m + s/60) * 6
+    const h_deg = (h + m/60 + s/3600) * 30
+    ss.style.transform = `translate(-50%, 0) rotate(${s_deg}deg)`
+    mm.style.transform = `translate(-50%, 0) rotate(${m_deg}deg)`
+    hh.style.transform = `translate(-50%, 0) rotate(${h_deg}deg)`
+  }
+  run()
+  let str = ''
+  for (let i = 0; i < 30; i++) {
+    str += `
+    <div
+      class="${i%6 === 0 ? 'dot dot_active' : 'dot'}"
+      style="transform: translate(-50%, -50%) rotate(${i*6}deg)">
+      <span class="left"></span><span class="right"></span>
+    </div>
+    `
+  }
+  dotContainer.innerHTML = str
+</script>
+</body>
+</html>
