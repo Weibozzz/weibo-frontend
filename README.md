@@ -63,4 +63,4 @@
 
 qq群1: 718650337
 
-![伟波前端](https://cdn.nlark.com/yuque/0/2021/png/232624/1611566795964-a22487fd-6e08-462d-b3a4-85e3a3c0461e.png)
+![伟波前端](http://weibozzz.gitee.io/some-imgs/wx/qrcode.jpg)
