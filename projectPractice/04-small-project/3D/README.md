@@ -7,7 +7,7 @@
 - 上下左右居中运用(另外一种)
 - transform: translate rotate (偏移旋转)
     - transform-style （3d转换）
-- animation
+- animation(顺序可以调换，但是有两个时间 duration 和 delay 你要去尝试看)
     - name (动画名)
     - duration (一次动画总执行时间)
     - timing-function (速度曲线)

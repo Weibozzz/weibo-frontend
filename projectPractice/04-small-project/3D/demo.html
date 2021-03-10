@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    @keyframes rotateXY {
+      0%{
+        transform: rotateY(0deg) rotateX(0deg);
+      }
+      100%{
+        transform: rotateY(360deg) rotateX(360deg);
+      }
+    }
+    .center{
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+    }
+    .main{
+      width: 240px;
+      height: 240px;
+      transform-style: preserve-3d;
+      animation: rotateXY 1s 8s linear infinite;
+    }
+    div.in{
+      width: 240px;
+      height: 240px;
+    }
+    div.out{
+      width: 400px;
+      height: 400px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: all 1s;
+    }
+    .left{
+      transform: rotateX(90deg) translateZ(120px);
+      background-color: pink;
+    }
+    .right{
+      transform: rotateX(90deg) translateZ(-120px);
+      background-color: blueviolet;
+    }
+    .top{
+      transform: rotateX(0deg) translateZ(120px);
+      background-color: red;
+    }
+    .bottom{
+      transform: rotateX(0deg) translateZ(-120px);
+      background-color: gold;
+    }
+    .font{
+      transform: rotateY(90deg) translateZ(-120px);
+      background-color: greenyellow;
+    }
+    .back{
+      transform: rotateY(90deg) translateZ(120px);
+      background-color: darkslategray;
+    }
+    .main:hover .out.left{
+      transform: rotateX(90deg) translateZ(290px);
+    }
+    .out.left{
+      transform: rotateX(90deg) translateZ(200px);
+      background-image: url("http://weibozzz.gitee.io/some-imgs/JayChou/545.jpg");
+    }
+    .main:hover .out.right{
+      transform: rotateX(90deg) translateZ(-290px);
+    }
+    .out.right{
+      transform: rotateX(90deg) translateZ(-200px);
+      background-image: url("http://weibozzz.gitee.io/some-imgs/JayChou/c749c4992bab0eea.png");
+
+    }
+    .main:hover .out.top{
+      transform: rotateX(0deg) translateZ(290px);
+    }
+    .out.top{
+      transform: rotateX(0deg) translateZ(200px);
+      background-image: url("http://weibozzz.gitee.io/some-imgs/JayChou/c749c4992bab0eea.png");
+
+    }
+    .main:hover .out.bottom{
+      transform: rotateX(0deg) translateZ(-290px);
+    }
+    .out.bottom{
+      transform: rotateX(0deg) translateZ(-200px);
+      background-image: url("http://weibozzz.gitee.io/some-imgs/JayChou/c749c4992bab0eea.png");
+    }
+    .main:hover .out.font{
+      transform: rotateY(90deg) translateZ(-290px);
+    }
+    .out.font{
+      transform: rotateY(90deg) translateZ(-200px);
+      background-image: url("http://weibozzz.gitee.io/some-imgs/JayChou/c749c4992bab0eea.png");
+
+    }
+    .main:hover .out.back{
+      transform: rotateY(90deg) translateZ(290px);
+    }
+    .out.back{
+      transform: rotateY(90deg) translateZ(200px);
+      background-image: url("http://weibozzz.gitee.io/some-imgs/JayChou/c749c4992bab0eea.png");
+
+    }
+  </style>
+</head>
+<body>
+<div class="main center">
+  <div class="in left center"></div>
+  <div class="in right center"></div>
+  <div class="in top center"></div>
+  <div class="in bottom center"></div>
+  <div class="in font center"></div>
+  <div class="in back center"></div>
+  <div class="out left center"></div>
+  <div class="out right center"></div>
+  <div class="out top center"></div>
+  <div class="out bottom center"></div>
+  <div class="out font center"></div>
+  <div class="out back center"></div>
+</div>
+</body>
+</html>
