@@ -119,11 +119,12 @@ div{
     - random
     - cell
     - floor
-    - fround
+    - round
     - max
     - min
 ### 3.5 计时器
-- setInterval
+- setInterval clearInterval
+- setTimeout clearTimeout
 ### 3.6 event(事件)
 事件冒泡 事件委托 1. 避免重复多个事件  2. 未来元素也可以加上事件
 - click
