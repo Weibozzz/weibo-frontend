@@ -109,7 +109,6 @@ div{
 ### 3.4 对象
 - date 取值
 - function
-    - 看5.5例子
 - object
 - number
 - string
@@ -139,5 +138,5 @@ div{
 ### 4 ajax
 - typeof
 - JSON.parse()
-### 5 作用域 (代码封装)
-可以看 ajax 源码
+- JSON.stringify()
+### 5 作用域 

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+<!--input演示-->
+<div>
+  <input class="input" id="input-demo" type="number"><span id="tip"></span>
+  <div id="focus">请输入123</div>
+</div>
+<hr>
+<!--select演示-->
+<div>
+  <select id="select">
+    <option value="a">男</option>
+    <option value="b">女</option>
+  </select>
+</div>
+<!--单选-->
+<div>
+  <p>Select a maintenance drone:</p>
+
+  <div>
+    <input type="radio" id="huey" name="drone" value="huey"
+           checked>
+    <label for="huey">Huey</label>
+  </div>
+
+  <div>
+    <input type="radio" id="dewey" name="drone" value="dewey">
+    <label for="dewey">Dewey</label>
+  </div>
+
+  <div>
+    <input type="radio" id="louie" name="drone" value="louie">
+    <label for="louie">Louie</label>
+  </div>
+
+</div>
+<hr>
+<!--多选-->
+<div>
+  <p>
+    <input type="checkbox" id="cbox1" value="first_checkbox" name="checkbox">
+    <label for="cbox1">This is the first checkbox</label>
+  </p>
+  <p>
+    <input type="checkbox" id="cbox2" value="second_checkbox" checked="checked" name="checkbox">
+    <label for="cbox2">This is the second checkbox, which is checked</label>
+  </p>
+</div>
+<hr>
+<script>
+  function inputDemo (){
+    var inputDemo = document.getElementById('input-demo')
+    const tip = document.getElementById('tip')
+    const focus = document.getElementById('focus')
+    inputDemo.addEventListener('input', function (e){
+      if (e.target.value === '123') {
+        tip.innerText = '输入正确'
+        tip.style.color = 'green'
+      } else {
+        tip.innerText = '输入错误'
+        tip.style.color = 'red'
+      }
+    })
+    // inputDemo.addEventListener('blur', function (e){
+    //   console.log(e.target.value)
+    // })
+    inputDemo.onblur = function (e){
+
+    }
+    inputDemo.onfocus = function (e){
+      focus.style.display = 'block'
+    }
+  }
+  const select = document.getElementById('select')
+  select.onchange = function (e) {
+    console.log(e.target.value)
+  }
+</script>
+</body>
+</html>

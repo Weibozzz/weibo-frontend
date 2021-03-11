@@ -4,9 +4,9 @@
 - open
 - send
 - onreadystatechange
-  - readyState
-  - status
-  - responseText
+    - readyState
+    - status
+    - responseText
 
 ## get 和 post 区别
 - post 需要写 header
@@ -17,9 +17,5 @@
 - string
   - substring
   
-### 启动服务
-如果有 `node` 才可以继续进行
-```shell
-cnpm install
-npm start
-```
+### 作业
+大家记得自己尝试

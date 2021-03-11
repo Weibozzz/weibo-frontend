@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<!--form-->
+<form>
+  <div>
+    <label for="nickname">昵称：</label>
+    <input class="input" id="nickname" type="text" maxlength="10" name="nickname">
+  </div>
+  <div>
+    <label for="hobby">爱好：</label>
+    <select id="hobby" name="hobby" multiple>
+      <option value="ping-pong">乒乓球</option>
+      <option value="Basketball">篮球</option>
+      <option value="Football">足球</option>
+    </select>
+  </div>
+  <div>
+    <button>提交</button>
+  </div>
+</form>
+<body>
+<script>
+  const form = document.getElementsByTagName('form')[0]
+  form.onsubmit = function (e){
+    console.log(123)
+    e.preventDefault()
+    const input = document.getElementsByName('nickname')[0]
+    console.log(input.value)
+  }
+</script>
+</body>
+</html>
