@@ -22,3 +22,5 @@ css实现3D立方体
 #### 4.3 colourful-square
 闪烁的方格子
 
+![3D](http://weibozzz.gitee.io/some-imgs/project-gif/colorsfulRect.gif)
+
