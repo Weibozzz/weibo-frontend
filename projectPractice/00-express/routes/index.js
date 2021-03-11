@@ -58,20 +58,30 @@ router.get('/daily', async function (req, res, next) {
     })
   }
 })
+const tagData = [
+  {
+    index: 1,
+    name: '全部文章',
+    href: 'http://www.baidu.com',
+    target: false,
+  },
+  {
+    index: 20,
+    name: 'js',
+  },
+  {
+    index: 20,
+    name: 'react',
+  },
+]
 router.get('/tag', async function (req, res, next) {
   res.send({
-    success: [
-      {
-        index: 1,
-        name: '全部文章',
-        href: 'http://www.baidu.com',
-        target: false,
-      },
-      {
-        index: 20,
-        name: 'js',
-      },
-    ]
+    success: tagData
+  })
+})
+router.post('/tag', async function (req, res, next) {
+  res.send({
+    success: tagData
   })
 })
 router.get('/form', async function (req, res, next) {
