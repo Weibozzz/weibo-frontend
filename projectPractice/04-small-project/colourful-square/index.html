@@ -3,37 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+  <style>
+    .can {
+      width: 1400px;
+      height: 800px;
+    }
+    .can:after{
+      content: '';
+      display: block;
+      clear: both;
+    }
+    .rect{
+      display: inline-block;
+    }
+    .rectFloat{
+      float: left;
+    }
+  </style>
 </head>
 <body>
-<canvas id="canvas2" width="1400" height="800" style="border: 1px solid black"></canvas>
+<div class="can"></div>
 </body>
-<!--<script src="js/jquery-1.8.3.min.js"></script>-->
 <script>
-  var canvas2 = document.getElementById("canvas2");
-  var ctx2 = canvas2.getContext("2d");
-  function col(){
-    for(var i=0;i<1400;i+=100){
-      for(var j=0;j<800;j+=100){
-        rgb();
-        ctx2.fillRect(i,j,50,50);
-        rgb();
-        ctx2.fillRect(i+50,j+50,50,50);
-      }
+  var can = document.getElementsByClassName('can')[0]
+  var canObj = can.getBoundingClientRect()
+  var width = canObj.width
+  var height = canObj.height
+  const LEN = 50
+  var maxX = Math.floor(width / LEN)
+  var maxY = Math.floor(width / LEN)
+  function randomRgba(){
+    var r = Math.ceil(Math.random() * 255)
+    var g = Math.ceil(Math.random() * 255)
+    var b = Math.ceil(Math.random() * 255)
+    var a = Math.random().toFixed(1)
+    // var a = Number(String(Math.random()).substring(0,3))
+    // return `rgba(${r}, ${g}, ${b}, ${a})`;
+    return `rgb(${r}, ${g}, ${b})`;
+  }
+
+  function run(){
+    for (var i = 0; i < maxX * maxY; i++) {
+      var span = document.createElement('span')
+      span.className = 'rect'
+      span.style.width = LEN + 'px'
+      span.style.height = LEN + 'px'
+      span.style.backgroundColor = randomRgba()
+      can.append(span)
     }
   }
-  function rgb(){
-    var ran=parseInt(Math.random()*255);
-    var ran2=parseInt(Math.random()*255);
-    var ran3=parseInt(Math.random()*255);
-    var ran4=Math.random().toFixed(1);
-    ctx2.fillStyle=ctx2.fillStyle="rgba("+ran+","+ran2+","+ran3+","+ran4+")";
+  function runStr(){
+    var str = ''
+    for (var i = 0; i < maxX * maxY; i++) {
+      str += `
+        <span
+         class="rectFloat"
+         style="width:${LEN}px;height:${LEN}px;background-color: ${randomRgba()}"
+         ></span>
+      `
+    }
+    can.innerHTML = str
   }
-  col();
-  setInterval(col,100);
-
-
-
-
+  runStr()
+  setInterval(runStr, 50)
 
 </script>
 </body>
