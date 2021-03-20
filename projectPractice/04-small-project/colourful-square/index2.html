@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .can{
+      width: 803px;
+      height: 503px;
+    }
+    .can:after{
+      content: '';
+      display: block;
+      clear: both;
+    }
+    .item{
+      float: left;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+<div class="can"></div>
+<script>
+  var can = document.querySelectorAll('.can')[0]
+  var rect = can.getBoundingClientRect()
+  const LEN = 50
+  var maxX = Math.floor(rect.width / LEN)
+  var maxY = Math.floor(rect.height / LEN)
+
+  function randomFn(min, max){
+    var ran = Math.random()
+    var result = ran*(max-min)+min
+    return Math.floor(result)
+  }
+  function run(){
+    var str = ''
+    for (var i = 0; i < maxX * maxY; i++) {
+      var r = randomFn(0,256)
+      var g = randomFn(0,256)
+      var b = randomFn(0,256)
+      var a = Math.random().toFixed(2)
+      str += `<span
+        class="item"
+        style="width:${LEN + 'px'};height:${LEN + 'px'};background-color: rgba(${r},${g},${b},${a})"
+        ></span>`
+    }
+    can.innerHTML = str
+  }
+  run()
+  setInterval(run, 50)
+</script>
+</body>
+</html>

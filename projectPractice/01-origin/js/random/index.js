@@ -21,30 +21,32 @@ const getRandomMarginTop = () => {
 const getRandomMarginLeft = () => {
   return Math.ceil(Math.random() * MARGIN_LEFTS) * STEP
 }
-const getRandomTxt = (text) => {
-  let len = text.length
-  let random = Math.random() * len
-  //最少截取4个字符
-  let result = Math.max(Math.ceil(random), 4)
-  if (len > MAX_LENGTH_TXT) {
-    return text.slice(0, result)
-  }
-  return text
-}
-function getRandomColor () {
-  let ran = Math.random() * COLORS_ARR.length | 0
-  let color = COLORS_ARR[ran]
-  return color;
-}
-const container = document.querySelectorAll('.container')[0]
 const arr = ['全部文章全部文章', 'javascript', 'htmlhtml', 'htmlhtml']
-for (let i = 0; i < arr.length; i++) {
-  const item = arr[i]
-  const span = document.createElement('span')
+// let container = document.querySelectorAll('.container')[0]
+let container = document.getElementsByClassName('container')[0]
+// console.log(container)
+for (var i = 0; i < arr.length; i++) {
+  var item = arr[i]
+  var span = document.createElement('span')
   span.innerText = getRandomTxt(item)
   span.className = 'item'
-  span.style.backgroundColor = getRandomColor()
   span.style.marginLeft = getRandomMarginLeft() + 'px'
   span.style.marginTop = getRandomMarginTop() + 'px'
+  span.style.backgroundColor = getRandomColor()
   container.appendChild(span)
+}
+
+function randomFn(min, max){
+  var ran = Math.random()
+  var result = ran*(max-min)+min
+  return Math.floor(result)
+}
+function getRandomColor(){
+  return COLORS_ARR[randomFn(0, COLORS_ARR.length)];
+}
+
+function getRandomTxt (text){
+  let len = text.length
+  var ran = randomFn(2, len)
+  return text.slice(0, ran);
 }

@@ -1,0 +1,6 @@
+var date = new Date()
+console.log(date.getTime())
+console.log(date.getHours())
+console.log(date.getMinutes())
+console.log(date.getMonth())
+console.log(date.getDay())

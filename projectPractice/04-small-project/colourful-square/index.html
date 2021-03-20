@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .can {
+      width: 1400px;
+      height: 800px;
+    }
+    .can:after{
+      content: '';
+      display: block;
+      clear: both;
+    }
+    .rect{
+      display: inline-block;
+    }
+    .rectFloat{
+      float: left;
+    }
+  </style>
+</head>
+<body>
+<div class="can"></div>
+</body>
+<script>
+  var can = document.getElementsByClassName('can')[0]
+  var canObj = can.getBoundingClientRect()
+  var width = canObj.width
+  var height = canObj.height
+  const LEN = 50
+  var maxX = Math.floor(width / LEN)
+  var maxY = Math.floor(width / LEN)
+  function randomRgba(){
+    var r = Math.ceil(Math.random() * 255)
+    var g = Math.ceil(Math.random() * 255)
+    var b = Math.ceil(Math.random() * 255)
+    var a = Math.random().toFixed(1)
+    // var a = Number(String(Math.random()).substring(0,3))
+    // return `rgba(${r}, ${g}, ${b}, ${a})`;
+    return `rgb(${r}, ${g}, ${b})`;
+  }
+
+  function run(){
+    for (var i = 0; i < maxX * maxY; i++) {
+      var span = document.createElement('span')
+      span.className = 'rect'
+      span.style.width = LEN + 'px'
+      span.style.height = LEN + 'px'
+      span.style.backgroundColor = randomRgba()
+      can.append(span)
+    }
+  }
+  function runStr(){
+    var str = ''
+    for (var i = 0; i < maxX * maxY; i++) {
+      str += `
+        <span
+         class="rectFloat"
+         style="width:${LEN}px;height:${LEN}px;background-color: ${randomRgba()}"
+         ></span>
+      `
+    }
+    can.innerHTML = str
+  }
+  runStr()
+  setInterval(runStr, 50)
+
+</script>
+</body>
+</html>

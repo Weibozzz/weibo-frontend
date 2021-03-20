@@ -1,32 +1,30 @@
-// const arr = ['全部文章', 'js', 'html', 'css']
-const arr = [
+const tagList = [
   {
-    index: 1,
     name: '全部文章',
-    href: 'http://www.baidu.com',
-    target: false,
+    href: 'https://www.baidu.com'
   },
   {
-    index: 20,
-    name: 'js',
+    name: 'css',
+    href: 'http://www.liuweibo.com'
   },
+  {
+    name: 'css',
+  }
 ]
-const tagContainer = document.getElementsByClassName('tag-list')[0]
-let target = '_self'
-for (let i = 0; i < arr.length; i++) {
+
+const tagListDom = document.getElementsByClassName('tag-list')[0]
+
+
+for (let i = 0; i<tagList.length;i++){
+  const item = tagList[i]
+  console.log(item.href)
   const span = document.createElement('span')
-  const item = arr[i]
-  // span.innerText = arr[i]
-  span.className = 'tag-name'
-  // span.innerHTML = '<span>' + item.name + '</span>'
-  if(item.target){
-    target = '_blank'
-  }
-  if(item.href){
-    // span.innerHTML = '<a href="'+ item.href +'" target="'+ target+'">' + item.name + '</a>'
-    span.innerHTML = `<a href="${item.href}" target="${target}">${item.name}</a>`
-  } else {
+  if(item.href!==undefined){
+    span.innerHTML = `<a class="tag-name" href="${item.href}">${item.name}</a>`
+  }else {
     span.innerText = item.name
+    span.className = 'tag-name'
   }
-  tagContainer.appendChild(span)
+  tagListDom.appendChild(span)
 }
+

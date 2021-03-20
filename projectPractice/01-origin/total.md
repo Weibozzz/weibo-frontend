@@ -17,8 +17,12 @@
 - title
 ## 2 css
 - float
+  - left
+  - right
+  - none
 - position
-    - top
+  - static relative absolute fixed
+  - top
 - width
 - margin(外边距)
     - padding-top
@@ -41,6 +45,8 @@
 - outline
 - box-shadow
 - vertical-align: middle;
+- transform
+  - translate
 
 ### 2.1 优先级
 - id(唯一) 100
@@ -92,19 +98,17 @@ div{
     }
     ```
 ## 3 js
-### 3.1 变量
+### 3.1 array
 - 变量
 - 数据类型
-### 3.2 循环(流程控制)
-- for
-- if else
+- dom属性 修改 创建
+- 流程控制
 ### 3.3 dom操作
 - dom操作
 - dom获取方式
 ### 3.4 对象
 - date 取值
 - function
-    - 看5.5例子
 - object
 - number
 - string
@@ -114,11 +118,12 @@ div{
     - random
     - cell
     - floor
-    - fround
+    - round
     - max
     - min
 ### 3.5 计时器
-- setInterval
+- setInterval clearInterval
+- setTimeout clearTimeout
 ### 3.6 event(事件)
 事件冒泡 事件委托 1. 避免重复多个事件  2. 未来元素也可以加上事件
 - click
@@ -133,5 +138,5 @@ div{
 ### 4 ajax
 - typeof
 - JSON.parse()
-### 5 作用域 (代码封装)
-可以看 ajax 源码
+- JSON.stringify()
+### 5 作用域 

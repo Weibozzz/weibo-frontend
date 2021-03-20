@@ -57,13 +57,13 @@ function ajaxGet () {
   xhr.send(null)
   // 发送并接受返回值
   xhr.onreadystatechange = function () {
-    console.log(xhr.readyState)
+    // console.log(xhr.readyState)
     // 这步为判断服务器是否正确响应
     if (xhr.readyState == 4 && xhr.status == 200) {
       console.log(xhr.responseText)
       if (typeof xhr.responseText === 'string') {
         const array = JSON.parse(xhr.responseText)
-        insertTag(array.success)
+        // insertTag(array.success)
       }
     }
   }
