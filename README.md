@@ -16,7 +16,7 @@
 
 维护这个项目的初衷，可以看这篇文章：[《我从零入门前端，两年半时间拿到年薪32w的offer之路》](https://www.yuque.com/liuweibo-qagim/qm64lq/os4vwp)
 
-前端视频教学路线资源：[《伟波前端从零基础教学》](https://space.bilibili.com/456900797/channel/detail?cid=166108)
+前端视频教学路线资源：[《伟波前端从零基础教学》](https://www.bilibili.com/video/BV1py4y1E79E)
 
 ## 项目借鉴和建议
 
