@@ -6,7 +6,7 @@
 ### 01-origin
 用原生写一个几乎和我一样的 [博客](http://www.liuweibo.cn)
 ### 02-vue
-vue 写博客 待完成
+vue 写博客 正在备课讲解
 ### 03-react
 react 写博客 待完成
 ### 04-small-project
