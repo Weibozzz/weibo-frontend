@@ -26,77 +26,63 @@
 
 <script>
 export default {
+  data () {
+    return {
+      BG_INDEX: [
+        {
+          key: '西安钟楼',
+          value: 'http://images.static.liuweibo.cn/image/index/zhoulou.jpg'
+        },
+        {
+          key: '上海东方明珠',
+          value: 'http://images.static.liuweibo.cn/image/index/dongfangmingzhu.jpg'
+        },
+        {
+          key: '华山',
+          value: 'http://images.static.liuweibo.cn/image/index/huashan.jpg'
+        },
+        {
+          key: '明德楼',
+          value: 'http://images.static.liuweibo.cn/image/index/mindelou.jpg'
+        },
+        {
+          key: '韩城古城',
+          value: 'http://images.static.liuweibo.cn/image/index/hanchegngucheng.jpg'
+        }
+        // {
+        //   key: '韩城司马迁',
+        //   value: 'http://images.static.liuweibo.cn/image/index/simaqina.jpg'
+        // },
+        // {
+        //   key: '韩城美食',
+        //   value: 'http://images.static.liuweibo.cn/image/index/hanchegnmeishi.jpg'
+        // },
+      ]
+    };
+  },
   mounted () {
-    const BG_INDEX = [
-      {
-        key: '西安钟楼',
-        value: 'http://images.static.liuweibo.cn/image/index/zhoulou.jpg'
-      },
-      {
-        key: '上海东方明珠',
-        value: 'http://images.static.liuweibo.cn/image/index/dongfangmingzhu.jpg'
-      },
-      {
-        key: '华山',
-        value: 'http://images.static.liuweibo.cn/image/index/huashan.jpg'
-      },
-      {
-        key: '明德楼',
-        value: 'http://images.static.liuweibo.cn/image/index/mindelou.jpg'
-      },
-      {
-        key: '韩城古城',
-        value: 'http://images.static.liuweibo.cn/image/index/hanchegngucheng.jpg'
-      }
-      // {
-      //   key: '韩城司马迁',
-      //   value: 'http://images.static.liuweibo.cn/image/index/simaqina.jpg'
-      // },
-      // {
-      //   key: '韩城美食',
-      //   value: 'http://images.static.liuweibo.cn/image/index/hanchegnmeishi.jpg'
-      // },
-    ]
-    function getRandom () {
-      return Math.random() * BG_INDEX.length | 0
+    this.init()
+  },
+  methods: {
+    init () {
+      const defaultIndexBg = 0
+      const body = document.getElementsByTagName('body')[0]
+      setInterval(()=>{
+        let random = this.getRandom()
+        if (random === defaultIndexBg) {
+          random = this.getRandom()
+        }
+        body.style.backgroundImage = `url(${this.BG_INDEX[random].value})`
+      }, 3000)
+    },
+    getRandom () {
+      return Math.random() * this.BG_INDEX.length | 0
     }
-    const defaultIndexBg = 0
-    const body = document.getElementsByTagName('body')[0]
-    setInterval(()=>{
-      let random = getRandom()
-      if (random === defaultIndexBg) {
-        random = getRandom()
-      }
-      body.style.backgroundImage = `url(${BG_INDEX[random].value})`
-    }, 3000)
   }
 }
 </script>
 
 <style scoped>
-/*--------------------清除默认样式 start----------------------------*/
-h1, ul, li, body {
-  margin: 0;
-  padding: 0;
-  font-size: 16px;
-}
-li{
-  list-style: none;
-}
-h1 {
-  font-weight: normal;
-}
-
-/*-------------------清除默认样式 end-------------------------------*/
-body {
-  /*todo vh*/
-  min-height: 100vh;
-  background-image: url('http://images.static.liuweibo.cn/image/index/zhoulou.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition: All 2s ease;
-}
 
 .container {
   position: absolute;
