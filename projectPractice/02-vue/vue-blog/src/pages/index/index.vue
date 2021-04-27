@@ -1,26 +1,30 @@
 <template>
-  <div class="container">
-    <!--  头部标题-->
-    <div class="header">
-      <h1>{{ title }}</h1>
-      <div class="sub-title">{{ subTitle }}</div>
-    </div>
-    <!--  主题内容-->
-    <div class="content">
-      <ul class="list">
-        <li class="item"
-            :class="{
+  <div class="container-rapper"
+       :style="{backgroundImage: `url(${backgroundImage})`}"
+  >
+    <div class="container">
+      <!--  头部标题-->
+      <div class="header">
+        <h1>{{ title }}</h1>
+        <div class="sub-title">{{ subTitle }}</div>
+      </div>
+      <!--  主题内容-->
+      <div class="content">
+        <ul class="list">
+          <li class="item"
+              :class="{
               'last-item': index === titleList.length - 1
             }"
-            :key="index"
-            v-for="(item, index) in titleList">
-          <a :href="item.target">》》{{ item.title }}</a>
-        </li>
-      </ul>
-    </div>
-    <!--  页脚-->
-    <div class="footer">
-      {{ footer }}
+              :key="index"
+              v-for="(item, index) in titleList">
+            <a :href="item.target">》》{{ item.title }}</a>
+          </li>
+        </ul>
+      </div>
+      <!--  页脚-->
+      <div class="footer">
+        {{ footer }}
+      </div>
     </div>
   </div>
 </template>
@@ -30,7 +34,8 @@ import { pageIndexConstantData } from '@/constant'
 export default {
   data () {
     return {
-      ...pageIndexConstantData
+      ...pageIndexConstantData,
+      backgroundImage: 'http://images.static.liuweibo.cn/image/index/zhoulou.jpg'
     };
   },
   created () {},
@@ -40,13 +45,12 @@ export default {
   methods: {
     init () {
       const defaultIndexBg = 0
-      const body = document.getElementsByTagName('body')[0]
       setInterval(()=>{
         let random = this.getRandom()
         if (random === defaultIndexBg) {
           random = this.getRandom()
         }
-        body.style.backgroundImage = `url(${this.BG_INDEX[random].value})`
+        this.backgroundImage = this.BG_INDEX[random].value
       }, 3000)
     },
     getRandom () {
@@ -57,7 +61,13 @@ export default {
 </script>
 
 <style scoped lang="less">
-
+.container-rapper {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: All 2s ease;
+}
 .container {
   position: absolute;
   top: 50%;
