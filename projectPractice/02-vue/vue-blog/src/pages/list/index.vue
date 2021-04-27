@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <global-loading v-show="loading"></global-loading>
     <guitor-ad></guitor-ad>
     <!--  头部header-->
     <global-header />
@@ -89,8 +90,14 @@
               <div class="pagination">
                 <span class="previous">previous</span>
                 <ul class="list">
-                  <li class="item active">1</li>
-                  <li class="item">2</li>
+                  <li class="item"
+                      v-for="(item, index) in  blogListTotal"
+                      :class="{
+                        active: num === index + 1
+                      }"
+                      :key="index"
+                      @click="handlePagination(index)"
+                  >{{ index + 1 }}</li>
                 </ul>
                 <span class="next">next</span>
               </div>

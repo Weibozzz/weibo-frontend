@@ -1,26 +1,34 @@
 import GlobalHeader from '@/components/GlobalHeader/index.vue'
 import GlobalFooter from '@/components/GlobalFooter/index.vue'
 import GuitorAd from '@/components/GuitorAd/index.vue'
+import GlobalLoading from '@/components/GlobalLoading/index.vue'
 import Api from '@/api'
 export default {
   components: {
     GuitorAd,
     GlobalHeader,
+    GlobalLoading,
     GlobalFooter
   },
   data () {
     return {
+      loading: false,
       dailyData: '',
       blogList: [],
+      blogListTotal: 0,
+      num: 1,
+      pageNum: 10,
     };
   },
   created () {
     this.getListData()
     this.getDaily()
+    this.getListTotal()
   },
   mounted () {
   },
   methods: {
+    // 获取日常笑话
     getDaily () {
       // https://github.com/MZCretin/RollToolsApi
       this.$http({
@@ -36,19 +44,44 @@ export default {
         this.dailyData = data.content
       })
     },
+    // 获取博客列表
     getListData () {
+      this.loading = true
       this.$http({
         url: Api.apiBlogList,
         params: {
           type: 'title',
-          num: 1,
-          pageNum: 10,
+          num: this.num,
+          pageNum: this.pageNum,
           wd: ''
         }
       }).then(res => {
+        this.loading = false
         this.blogList = res
+      }).catch(err => {
+        this.loading = false
       })
     },
+    // 获取博客总文章数
+    getListTotal () {
+      this.$http({
+        url: Api.apiBlogListTotal,
+        params: {
+          type: 'title',
+          wd: ''
+        }
+      }).then(res => {
+        const data = res[0] || {}
+        const { total = 0 } = data
+        this.blogListTotal = Math.ceil(total / this.pageNum)
+      })
+    },
+    // 分页获取数据
+    handlePagination (index) {
+      this.num = index + 1
+      this.getListData()
+    },
+    // 处理时间
     untilTime (time) {
       if (!time) {
         return ''

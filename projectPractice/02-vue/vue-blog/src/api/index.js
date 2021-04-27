@@ -1,3 +1,4 @@
 export default {
-  apiBlogList: '/api/getBlog'
+  apiBlogList: '/api/getBlog',
+  apiBlogListTotal: '/api/total',
 }
