@@ -13,3 +13,12 @@ cd vue-blog
 npm run serve
 ```
 如果提示让你使用淘宝镜像，输入 Y，接下来选择 vue2.x,等待下载依赖完成。
+
+## 开发
+### 1 增加 less
+> 目前 less-loader 最新的不兼容 webpack4,所以请使用 v7.x.x
+>
+
+```
+npm i less less-loader@7.1.0 -D
+```
