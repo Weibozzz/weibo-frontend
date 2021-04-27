@@ -9,6 +9,7 @@
       <div class="title-tips">
         <img class="smile-icon" src="~@/static/images/smile.png">
         关注公众平台：'伟波前端'，将是一个美好的邂逅哦!
+        <span v-if="dailyData" class="daily-tip">({{dailyData}})</span>
         <img class="close-icon" src="~@/static/images/close.png">
       </div>
       <!--    github-->
@@ -47,99 +48,32 @@
             <!--        文章-->
             <div class="article-list-item">
               <ul class="list">
-                <li class="item">
+                <li class="item"
+                    v-for="(item, index) in blogList"
+                    :key="item.id"
+                >
                   <div class="item-left">
                     <div class="title-box">
-                      <span class="title">文章文章1</span>
-                      <span class="tag">JavaScript</span>
-                      <span class="tag">react</span>
+                      <span class="title">{{ item.title }}</span>
+                      <template v-if="item.type">
+                        <span class="tag"
+                              v-for="type in item.type.split(',')"
+                              :key="type"
+                        >{{ type }}</span>
+                      </template>
                     </div>
                     <div class="extra-info">
                   <span class="time">
-                    2019-05-29 10:25 星期三
+<!--                    2019-05-29 10:25 星期三-->
+                    {{untilTime(item.createTime)}}
                   </span>
                       <span class="icon-info">
                     <img class="icon" src="~@/static/images/smile.png">
-                    12
+                    {{ item.like }}
                   </span>
                       <span class="icon-info">
                     <img class="icon" src="~@/static/images/smile.png">
-                    12
-                  </span>
-                    </div>
-                  </div>
-                  <div class="item-right">
-                    <img class="article-type-icon" src="http://images.static.liuweibo.cn/image/icon/others.jpg">
-                  </div>
-                </li>
-                <li class="item">
-                  <div class="item-left">
-                    <div class="title-box">
-                      <span class="title">文章文章1</span>
-                      <span class="tag">JavaScript</span>
-                      <span class="tag">react</span>
-                    </div>
-                    <div class="extra-info">
-                  <span class="time">
-                    2019-05-29 10:25 星期三
-                  </span>
-                      <span class="icon-info">
-                    <img class="icon" src="~@/static/images/smile.png">
-                    12
-                  </span>
-                      <span class="icon-info">
-                    <img class="icon" src="~@/static/images/smile.png">
-                    12
-                  </span>
-                    </div>
-                  </div>
-                  <div class="item-right">
-                    <img class="article-type-icon" src="http://images.static.liuweibo.cn/image/icon/others.jpg">
-                  </div>
-                </li>
-                <li class="item">
-                  <div class="item-left">
-                    <div class="title-box">
-                      <span class="title">文章文章1</span>
-                      <span class="tag">JavaScript</span>
-                      <span class="tag">react</span>
-                    </div>
-                    <div class="extra-info">
-                  <span class="time">
-                    2019-05-29 10:25 星期三
-                  </span>
-                      <span class="icon-info">
-                    <img class="icon" src="~@/static/images/smile.png">
-                    12
-                  </span>
-                      <span class="icon-info">
-                    <img class="icon" src="~@/static/images/smile.png">
-                    12
-                  </span>
-                    </div>
-                  </div>
-                  <div class="item-right">
-                    <img class="article-type-icon" src="http://images.static.liuweibo.cn/image/icon/others.jpg">
-                  </div>
-                </li>
-                <li class="item">
-                  <div class="item-left">
-                    <div class="title-box">
-                      <span class="title">文章文章1</span>
-                      <span class="tag">JavaScript</span>
-                      <span class="tag">react</span>
-                    </div>
-                    <div class="extra-info">
-                  <span class="time">
-                    2019-05-29 10:25 星期三
-                  </span>
-                      <span class="icon-info">
-                    <img class="icon" src="~@/static/images/smile.png">
-                    12
-                  </span>
-                      <span class="icon-info">
-                    <img class="icon" src="~@/static/images/smile.png">
-                    12
+                    {{ item.visitor }}
                   </span>
                     </div>
                   </div>
