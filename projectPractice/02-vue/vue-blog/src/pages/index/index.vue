@@ -2,64 +2,38 @@
   <div class="container">
     <!--  头部标题-->
     <div class="header">
-      <h1>xxxx的个人网站</h1>
-      <div class="sub-title">Liu WeiBo's Personal Website</div>
+      <h1>{{ title }}</h1>
+      <div class="sub-title">{{ subTitle }}</div>
     </div>
     <!--  主题内容-->
     <div class="content">
       <ul class="list">
-        <li class="item">
-          <a href="../../list/list-04/index.html">》》技术文章(BLog)</a>
+        <li class="item"
+            :class="{
+              'last-item': index === titleList.length - 1
+            }"
+            :key="index"
+            v-for="(item, index) in titleList">
+          <a :href="item.target">》》{{ item.title }}</a>
         </li>
-        <li class="item">
-          <a href="../../list/list-04/index.html">》》生活感想</a>
-        </li>
-        <li class="item last-item">》》文档中心</li>
       </ul>
     </div>
     <!--  页脚-->
     <div class="footer">
-      Contact | http://www.liuweibo.cn
+      {{ footer }}
     </div>
   </div>
 </template>
 
 <script>
+import { pageIndexConstantData } from '@/constant'
 export default {
   data () {
     return {
-      BG_INDEX: [
-        {
-          key: '西安钟楼',
-          value: 'http://images.static.liuweibo.cn/image/index/zhoulou.jpg'
-        },
-        {
-          key: '上海东方明珠',
-          value: 'http://images.static.liuweibo.cn/image/index/dongfangmingzhu.jpg'
-        },
-        {
-          key: '华山',
-          value: 'http://images.static.liuweibo.cn/image/index/huashan.jpg'
-        },
-        {
-          key: '明德楼',
-          value: 'http://images.static.liuweibo.cn/image/index/mindelou.jpg'
-        },
-        {
-          key: '韩城古城',
-          value: 'http://images.static.liuweibo.cn/image/index/hanchegngucheng.jpg'
-        }
-        // {
-        //   key: '韩城司马迁',
-        //   value: 'http://images.static.liuweibo.cn/image/index/simaqina.jpg'
-        // },
-        // {
-        //   key: '韩城美食',
-        //   value: 'http://images.static.liuweibo.cn/image/index/hanchegnmeishi.jpg'
-        // },
-      ]
+      ...pageIndexConstantData
     };
   },
+  created () {},
   mounted () {
     this.init()
   },
@@ -132,9 +106,11 @@ h1 {
   background-color: rgba(0, 0, 0, .5);
   border-radius: 6px;
 }
-.item a{
-  color: white;
-  text-decoration: none;
+.item{
+  a{
+    color: white;
+    text-decoration: none;
+  }
 }
 .last-item{
   margin-bottom: 0;
