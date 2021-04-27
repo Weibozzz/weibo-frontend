@@ -1,16 +1,8 @@
 <template>
   <div class="container">
-    <img class="guiter" src="~@/static/images/guiter.png">
+    <guitor-ad></guitor-ad>
     <!--  头部header-->
-    <div class="header">
-      <ul class="list">
-        <li class="item">
-          <a href="../../index/index-02/index.html" target="_blank">网站首页</a>
-        </li>
-        <li class="item active">文章列表</li>
-        <li class="item">关于我</li>
-      </ul>
-    </div>
+    <global-header />
     <!--  主题内容-->
     <div class="content-box">
       <!--    tips-->
@@ -177,21 +169,11 @@
       </div>
     </div>
     <!--  页脚-->
-    <div class="footer">
-      <p class="copy-name">
-        Power & Designed by
-        <a class="name" href="../../index/index.html">weiboqianduan</a>
-      </p>
-      <p class="copy-num">
-        © 2017
-        <a href="../../index/index.html">陕ICP备17015350号</a>
-      </p>
-    </div>
+    <global-footer />
   </div>
 </template>
 
 <script src="./index.js"></script>
-
 <style>
 
 body {
