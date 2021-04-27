@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-    <IndexPage />
+    <ListPage />
   </div>
 </template>
 
 <script>
-import IndexPage from './pages/index/index'
+// import IndexPage from './pages/index/index'
+import ListPage from './pages/list/index'
 
 export default {
   name: 'App',
   components: {
-    IndexPage
+    // IndexPage,
+    ListPage
   }
 }
 </script>
