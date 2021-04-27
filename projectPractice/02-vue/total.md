@@ -1,4 +1,7 @@
 # 总结
+## npm install
+- -D(--dev--save)   devDependencies
+- -S(--save)   dependencies
 ## 1. 生命周期
 - created
 - mounted

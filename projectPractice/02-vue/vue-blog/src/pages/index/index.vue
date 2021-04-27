@@ -17,7 +17,8 @@
             }"
               :key="index"
               v-for="(item, index) in titleList">
-            <a :href="item.target">》》{{ item.title }}</a>
+<!--            <router-link v-bind:to="'list'">》》{{ item.title }}</router-link>-->
+            <a @click="handleTarget(item)">》》{{ item.title }}</a>
           </li>
         </ul>
       </div>
@@ -55,6 +56,9 @@ export default {
     },
     getRandom () {
       return Math.random() * this.BG_INDEX.length | 0
+    },
+    handleTarget (item) {
+      this.$router.push('/list')
     }
   }
 }
@@ -120,6 +124,7 @@ h1 {
   a{
     color: white;
     text-decoration: none;
+    cursor: pointer;
   }
 }
 .last-item{
