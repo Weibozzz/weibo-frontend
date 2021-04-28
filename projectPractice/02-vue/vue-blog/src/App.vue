@@ -13,4 +13,7 @@ export default {
 
 <style>
 @import "~@/assets/reset.less";
+body {
+  background-color: #f0f2f5;
+}
 </style>

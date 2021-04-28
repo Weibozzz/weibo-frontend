@@ -2,12 +2,14 @@ import GlobalHeader from '@/components/GlobalHeader/index.vue'
 import GlobalFooter from '@/components/GlobalFooter/index.vue'
 import GuitorAd from '@/components/GuitorAd/index.vue'
 import GlobalLoading from '@/components/GlobalLoading/index.vue'
+import GlobalTips from '@/components/GlobalTips/index.vue'
 import Api from '@/api'
 export default {
   components: {
     GuitorAd,
     GlobalHeader,
     GlobalLoading,
+    GlobalTips,
     GlobalFooter
   },
   data () {
@@ -80,6 +82,12 @@ export default {
     handlePagination (index) {
       this.num = index + 1
       this.getListData()
+    },
+    // 跳转详情页面
+    handleDetail (item) {
+      this.$router.push({
+        path: `/detail/${item.id}`,
+      })
     },
     // 处理时间
     untilTime (time) {

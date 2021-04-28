@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import PageIndex from '@/pages/index/index'
 import ListIndex from '@/pages/list/index.vue'
+import DetailIndex from '@/pages/detail/index.vue'
 import Page404 from '@/pages/404/index.vue'
 
 const routes =  [
@@ -15,6 +16,10 @@ const routes =  [
   {
     path: '/list',
     component: ListIndex
+  },
+  {
+    path: '/detail/:id',
+    component: DetailIndex
   },
   // {
   //   path: '*',

@@ -6,21 +6,7 @@
     <global-header />
     <!--  主题内容-->
     <div class="content-box">
-      <!--    tips-->
-      <div class="title-tips">
-        <img class="smile-icon" src="~@/static/images/smile.png">
-        关注公众平台：'伟波前端'，将是一个美好的邂逅哦!
-        <span v-if="dailyData" class="daily-tip">({{dailyData}})</span>
-        <img class="close-icon" src="~@/static/images/close.png">
-      </div>
-      <!--    github-->
-      <div class="github">
-      <span class="github-title">
-        <img class="smile-icon" src="~@/static/images/smile.png">
-        github
-      </span>
-        <span class="github-star">200</span>
-      </div>
+      <global-tips :dailyData="dailyData"></global-tips>
       <!--    文章列表区域 todo 浮动自适应-->
       <div class="article">
         <!--      列表展示-->
@@ -55,7 +41,9 @@
                 >
                   <div class="item-left">
                     <div class="title-box">
-                      <span class="title">{{ item.title }}</span>
+                      <span class="title"
+                            @click="handleDetail(item)"
+                      >{{ item.title }}</span>
                       <template v-if="item.type">
                         <span class="tag"
                               v-for="type in item.type.split(',')"
@@ -115,12 +103,6 @@
 </template>
 
 <script src="./index.js"></script>
-<style>
-
-body {
-  background-color: #f0f2f5;
-}
-</style>
 <style scoped lang="less">
 @import "./index";
 </style>
