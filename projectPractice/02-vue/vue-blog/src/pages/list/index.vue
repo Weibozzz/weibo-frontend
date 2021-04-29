@@ -12,11 +12,12 @@
         <!--      列表展示-->
         <div class="article-list">
           <!--        文章搜索框-->
-          <div class="search-box">
-            <span class="title"></span>
-            <span class="input"></span>
-            <span class="submit"></span>
-          </div>
+          <w-input
+              :styleInput="{
+                width: '100%'
+              }"
+              @input="handleSearch"
+          ></w-input>
           <div class="article-box">
             <!--        提示-->
             <div class="article-list-tips">

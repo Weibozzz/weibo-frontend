@@ -3,7 +3,9 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 import router from './router'
 import request from './request'
+import WInput from '@/lib/w-input/index.vue'
 
+Vue.component('w-input', WInput)
 Vue.prototype.$http = request
 Vue.use(VueRouter)
 

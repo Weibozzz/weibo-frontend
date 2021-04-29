@@ -4,6 +4,7 @@ import GuitorAd from '@/components/GuitorAd/index.vue'
 import GlobalLoading from '@/components/GlobalLoading/index.vue'
 import GlobalTips from '@/components/GlobalTips/index.vue'
 import Api from '@/api'
+import { debounce } from '@/utils'
 export default {
   components: {
     GuitorAd,
@@ -15,11 +16,13 @@ export default {
   data () {
     return {
       loading: false,
+      tabActive: 'new', // 排行榜 rank 最近更新 new
       dailyData: '',
       blogList: [],
       blogListTotal: 0,
       num: 1,
       pageNum: 10,
+      wd: '',
     };
   },
   created () {
@@ -30,6 +33,13 @@ export default {
   mounted () {
   },
   methods: {
+    handleToggleTab (tabKey) {
+      this.tabActive = tabKey
+    },
+    handleSearch: debounce(function (e) {
+      this.wd = e.target.value
+      this.getListData()
+    }),
     // 获取日常笑话
     getDaily () {
       // https://github.com/MZCretin/RollToolsApi
@@ -55,7 +65,7 @@ export default {
           type: 'title',
           num: this.num,
           pageNum: this.pageNum,
-          wd: ''
+          wd: this.wd
         }
       }).then(res => {
         this.loading = false
