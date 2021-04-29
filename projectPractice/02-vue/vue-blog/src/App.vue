@@ -13,6 +13,7 @@ export default {
 
 <style>
 @import "~@/assets/reset.less";
+@import "~@/assets/common.less";
 body {
   background-color: #f0f2f5;
 }

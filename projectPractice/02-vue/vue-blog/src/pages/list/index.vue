@@ -34,7 +34,7 @@
           </span>
             </div>
             <!--        文章-->
-            <div class="article-list-item">
+            <div class="article-list-item clear">
               <ul class="list">
                 <li class="item"
                     v-for="(item, index) in blogList"
@@ -72,6 +72,37 @@
                   </div>
                 </li>
               </ul>
+              <div class="tab">
+                <div class="tab-title">
+                  <span
+                      class="tab-title-item"
+                      :class="{
+                        active: tabActive === 'new'
+                      }"
+                      @click="handleToggleTab('new')"
+                  >最近更新</span>
+                  <span
+                      class="tab-title-item"
+                      @click="handleToggleTab('rank')"
+                      :class="{
+                        active: tabActive === 'rank'
+                      }">排行榜</span>
+                </div>
+                <!--      最近更新-->
+                <ul class="tab-list" v-show="tabActive === 'new'">
+                  <li class="tab-list-item clear">
+                    <span class="title fl">最近更新-技巧</span>
+                    <span class="time fr">07-22</span>
+                  </li>
+                </ul>
+                <!--      排行榜-->
+                <ul class="tab-list" v-show="tabActive === 'rank'">
+                  <li class="tab-list-item clear">
+                    <span class="title fl">排行榜-技巧</span>
+                    <span class="time fr">07-22</span>
+                  </li>
+                </ul>
+              </div>
             </div>
             <!--        分页-->
             <div class="article-list-pages">
