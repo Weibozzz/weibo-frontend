@@ -45,8 +45,7 @@
             </div>
           </div>
           <!--        文章区域-->
-          <div class="article-detail-wrapper">
-            {{ content }}
+          <div class="article-detail-wrapper" v-html="content">
           </div>
         </div>
       </div>
@@ -58,6 +57,9 @@
 
 <script src="./index.js"></script>
 
+<style>
+@import "~@/assets/markdown.less";
+</style>
 <style scoped lang="less">
 @import "./index";
 </style>
