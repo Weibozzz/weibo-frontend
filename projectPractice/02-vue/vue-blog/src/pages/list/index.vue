@@ -7,6 +7,7 @@
     <!--  主题内容-->
     <div class="content-box">
       <global-tips :dailyData="dailyData"></global-tips>
+      <a-button type="primary">按钮</a-button>
       <!--    文章列表区域 todo 浮动自适应-->
       <div class="article">
         <!--      列表展示-->
