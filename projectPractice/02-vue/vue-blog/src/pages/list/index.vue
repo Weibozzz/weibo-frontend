@@ -6,7 +6,9 @@
     <global-header />
     <!--  主题内容-->
     <div class="content-box">
-      <global-tips :dailyData="dailyData"></global-tips>
+      <global-tips :dailyData="dailyData">
+        关注公众平台
+      </global-tips>
       <!--    文章列表区域 todo 浮动自适应-->
       <div class="article">
         <!--      列表展示-->

@@ -5,7 +5,10 @@
     <!--  头部header-->
     <global-header />
     <div class="content-box">
-      <global-tips></global-tips>
+      <global-tips>
+        关注B站
+        <span slot="extra" style="color: #009A61">这是详情页</span>
+      </global-tips>
       <div class="article clear">
         <!--        左边icon-->
         <div class="left-icon-wrapper fl">

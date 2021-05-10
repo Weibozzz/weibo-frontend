@@ -3,8 +3,9 @@
     <!--    tips-->
     <div class="title-tips">
       <img class="smile-icon" src="~@/static/images/smile.png">
-      关注公众平台：'伟波前端'，将是一个美好的邂逅哦!
+      <slot></slot>：'伟波前端'，将是一个美好的邂逅哦!
       <span v-if="dailyData" class="daily-tip">({{dailyData}})</span>
+      <slot name="extra"></slot>
       <img class="close-icon" src="~@/static/images/close.png">
     </div>
     <!--    github-->
