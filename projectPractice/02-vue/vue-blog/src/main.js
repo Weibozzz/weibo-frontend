@@ -3,6 +3,7 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 import router from './router'
 import request from './request'
+import store from './store'
 import WInput from '@/lib/w-input/index.vue'
 
 import './plugin'
@@ -15,5 +16,6 @@ Vue.config.productionTip = false
 
 new Vue({
   router,
+  store,
   render: h => h(App),
 }).$mount('#app')

@@ -9,6 +9,7 @@ import Api from '@/api'
 import marked from 'marked'
 import hljs from 'highlight.js'
 import { markdownConfig } from '@/plugin/markdown'
+import { mapGetters } from 'vuex'
 
 const { options, config } = markdownConfig
 hljs.configure(config)
@@ -30,6 +31,11 @@ export default {
     return {
       content: ''
     };
+  },
+  computed: {
+    ...mapGetters([
+      'desc'
+    ]),
   },
   created () {
     this.getDetailData()

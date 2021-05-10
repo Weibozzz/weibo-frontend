@@ -32,6 +32,7 @@
 
 <script>
 import { pageIndexConstantData } from '@/constant'
+import { mapMutations, mapActions } from 'vuex'
 export default {
   data () {
     return {
@@ -42,8 +43,19 @@ export default {
   created () {},
   mounted () {
     this.init()
+    // this.setDate('2021年6月15日')
+    this.$store.commit('setDate', '2021年6月16日')
+    // this.$store.dispatch('setAccessToken', 'abcdefg123456')
+    this.setAccessToken('abcdefg123456789')
+    console.log(this.$store.state)
   },
   methods: {
+    ...mapMutations([
+      'setDate'
+    ]),
+    ...mapActions([
+      'setAccessToken'
+    ]),
     init () {
       const defaultIndexBg = 0
       setInterval(()=>{

@@ -38,7 +38,7 @@
           <!--        文章标题区域-->
           <div class="article-title-wrapper clear">
             <div class="left fl">
-              <h1 class="title">shell简单脚本</h1>
+              <h1 class="title">shell简单脚本</h1> {{desc}}
               <a-divider></a-divider>
             </div>
             <div class="right fr">

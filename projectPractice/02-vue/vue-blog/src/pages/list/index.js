@@ -5,6 +5,7 @@ import GlobalLoading from '@/components/GlobalLoading/index.vue'
 import GlobalTips from '@/components/GlobalTips/index.vue'
 import Api from '@/api'
 import { debounce } from '@/utils'
+import { mapGetters, mapState } from 'vuex'
 export default {
   components: {
     GuitorAd,
@@ -25,12 +26,24 @@ export default {
       wd: '',
     };
   },
+  computed: {
+    ...mapGetters([
+      'desc'
+    ]),
+    ...mapState([
+      'author'
+    ])
+  },
   created () {
     this.getListData()
     this.getDaily()
     this.getListTotal()
   },
   mounted () {
+    console.log(this.desc)
+    console.log(this.author)
+    console.log(this.$store)
+    console.log(this.$store.getters.desc)
   },
   methods: {
     handleToggleTab (tabKey) {
