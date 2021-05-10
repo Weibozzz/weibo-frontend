@@ -4,6 +4,7 @@ import GuitorAd from '@/components/GuitorAd/index.vue'
 import GlobalLoading from '@/components/GlobalLoading/index.vue'
 import GlobalTips from '@/components/GlobalTips/index.vue'
 import DetailAd from '@/components/DetailAd/index.vue'
+import Comments from '@/components/Comments/index.vue'
 import Api from '@/api'
 import marked from 'marked'
 import hljs from 'highlight.js'
@@ -19,6 +20,7 @@ export default {
   components: {
     GuitorAd,
     DetailAd,
+    Comments,
     GlobalHeader,
     GlobalTips,
     GlobalLoading,

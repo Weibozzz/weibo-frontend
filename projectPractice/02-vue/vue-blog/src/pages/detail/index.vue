@@ -49,6 +49,8 @@
           </div>
         </div>
       </div>
+      <!--  评论-->
+      <Comments />
     </div>
     <!--  页脚-->
     <global-footer />

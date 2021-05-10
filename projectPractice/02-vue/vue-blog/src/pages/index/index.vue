@@ -94,6 +94,7 @@ export default {
 h1 {
   font-size: 18px;
   text-align: center;
+  color: white;
 }
 
 .sub-title {
