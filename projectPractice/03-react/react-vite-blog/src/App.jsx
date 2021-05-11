@@ -1,22 +1,26 @@
 import React, { useState } from 'react'
 import './App.css'
-import Test from './Test'
-
+import '@/assets/reset.less'
+import '@/assets/common.less'
+import Index from '@/pages/index'
+import List from '@/pages/list'
+import { BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
+const NoMatch = ({ location }) => (
+  <div>
+    <h3>
+      No match for <code>{location.pathname}</code>
+    </h3>
+  </div>
+);
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <Test test={'props data'}></Test>
-      <button onClick={() => setCount((count) => count + 1)}>
-        count is: {count}
-      </button>
-      <ul>
-        <li>12</li>
-        <li>12</li>
-        <li>12</li>
-      </ul>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Index} />
+        <Route path="/list" component={List} />
+        <Route component={NoMatch} />
+      </Switch>
+    </Router>
   )
 }
 
