@@ -1,8 +1,8 @@
-开发进行中……
 ## 版本
 - vue-cli@3.x.x
 - vue@2.x.x
 - ant-design-vue@1.1.x
+- node@12.x.x
 ## 安装
 ```
 npm install -g @vue/cli
