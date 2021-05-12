@@ -9,5 +9,19 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src')
     }
+  },
+  server: {
+    proxy: {
+      "/mxnzp": {
+        target: "https://www.mxnzp.com",
+        ws: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/mxnzp/, '')
+      },
+      "/api": {
+        target: "http://www.liuweibo.cn:7654",
+        ws: true,
+      },
+    }
   }
 })
