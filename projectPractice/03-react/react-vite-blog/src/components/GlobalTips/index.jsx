@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './index.less'
+import PropTypes from 'prop-types'
 import { SmileOutlined, CloseOutlined } from '@ant-design/icons'
 class Index extends Component {
   constructor () {
@@ -38,5 +39,9 @@ class Index extends Component {
       </div>
     )
   }
+}
+// https://zh-hans.reactjs.org/docs/typechecking-with-proptypes.html
+Index.propTypes = {
+  dailyData: PropTypes.string
 }
 export default Index

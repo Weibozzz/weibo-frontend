@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import { connect } from 'react-redux'
+import { setVisibilityFilter } from '@/store/actions'
 import './index.less'
 import '@/assets/markdown.less'
 import '@/assets/markdown-navbar.less'
@@ -97,7 +99,10 @@ function articleArea (props) {
     </div>
   );
 }
-export default function (props) {
+function App (props) {
+  useEffect(() => {
+    props.setFilter('刚才进入了详情页')
+  }, [])
   return (
     <div className='detail-page'>
       {/*头部header*/}
@@ -115,3 +120,12 @@ export default function (props) {
     </div>
   );
 }
+const mapStateToProps = state => {
+  return { visibilityFilter: state.visibilityFilter };
+}
+const mapDispatchToProps = dispatch => ({
+  setFilter: (val) => {
+    dispatch(setVisibilityFilter(val))
+  }
+})
+export default connect(mapStateToProps, mapDispatchToProps)(App)

@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 import 'antd/dist/antd.min.css'
 import './App.css'
 import '@/assets/reset.less'
 import '@/assets/common.less'
+import rootReducer from '@/store/reducers'
 import Index from '@/pages/index'
 import List from '@/pages/list/hooks'
 import Detail from '@/pages/detail/hooks'
@@ -15,15 +18,18 @@ const NoMatch = ({ location }) => (
   </div>
 );
 function App() {
+  const store = createStore(rootReducer)
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/" component={Index} />
-        <Route path="/list" component={List} />
-        <Route path="/detail/:id"  component={Detail} />
-        <Route component={NoMatch} />
-      </Switch>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Index} />
+          <Route path="/list" component={List} />
+          <Route path="/detail/:id"  component={Detail} />
+          <Route component={NoMatch} />
+        </Switch>
+      </Router>
+    </Provider>
   )
 }
 

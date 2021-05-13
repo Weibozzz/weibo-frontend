@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { connect } from 'react-redux'
 import "./index.less";
 import smilePng from "@/static/images/smile.png";
 import Api from "@/api";
@@ -86,7 +87,7 @@ function articleList(props) {
     })
   }
   const handleDetail = (item) => () => {
-    this.props.history.push(`/detail/${item.id}`);
+    props.history.push(`/detail/${item.id}`);
   };
   const renderType = (item) => {
     if (item.type) {
@@ -170,6 +171,7 @@ function articleList(props) {
               本站只是为了展示 React SSR 的效果而搭建的一个博客平台，
               前端技术博客知识体系移步这里 【
               <span className="mark">前端知识体系</span>】
+              <span>{props.visibilityFilter}</span>
             </div>
           </span>
         </div>
@@ -262,7 +264,7 @@ function articleList(props) {
     </div>
   );
 }
-export default function (props) {
+function App (props) {
   return (
     <div>
       <GlobalHeader />
@@ -280,3 +282,7 @@ export default function (props) {
     </div>
   );
 }
+const mapStateToProps = state => {
+  return { visibilityFilter: state.visibilityFilter };
+}
+export default connect(mapStateToProps)(App)
