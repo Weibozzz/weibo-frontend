@@ -3,6 +3,12 @@ import './index.less'
 import smilePng from '@/static/images/smile.png'
 import Api from '@/api'
 import request from '@/request'
+import GlobalHeader from '@/components/GlobalHeader'
+import GlobalFooter from '@/components/GlobalFooter'
+import GlobalTips from '@/components/GlobalTips'
+import { Input, Pagination } from 'antd'
+import { InfoCircleOutlined } from '@ant-design/icons'
+const Search = Input.Search
 class List extends PureComponent {
   constructor () {
     super()
@@ -11,6 +17,7 @@ class List extends PureComponent {
       dailyData: '',
       blogList: [],
       blogListTotal: 1,
+      totalPage: 0,
       num: 1,
       pageNum: 10,
       tabActive: 'new',
@@ -50,6 +57,7 @@ class List extends PureComponent {
       const data = res[0] || {}
       const { total = 0 } = data
       this.setState({
+        totalPage: total,
         blogListTotal: Math.ceil(total / this.state.pageNum)
       })
     })
@@ -79,19 +87,22 @@ class List extends PureComponent {
     }).then(res => {
       const data = res.data[0] || {}
       console.log(data.content)
-      // this.setState({
-      //   dailyData: data.content
-      // })
+      this.setState({
+        dailyData: data.content
+      })
     })
   }
   handleDetail = (item) => () => {
-    console.log(item)
+    this.props.history.push(`/detail/${item.id}`)
   }
   handlePagination = (index) => () => {
     this.setState({
       num: index + 1
     })
     this.getListData()
+  }
+  handlePaginationChange = (page, pageSize) => {
+    this.handlePagination(page - 1)()
   }
   renderType = (item) => {
     if (item.type) {
@@ -108,27 +119,81 @@ class List extends PureComponent {
     }
     return null
   }
+  // 处理时间
+  untilTime = (time) => {
+    if (!time) {
+      return ''
+    }
+    const weekMapping = {
+      0: '日',
+      1: '一',
+      2: '二',
+      3: '三',
+      4: '四',
+      5: '五',
+      6: '六'
+    }
+    let dateData = new Date(time * 1000)
+    let year = dateData.getFullYear()
+    let month = dateData.getMonth() + 1
+    let date = dateData.getDate()
+    let day = dateData.getDay()
+    let h = dateData.getHours()
+    let m = dateData.getMinutes()
+    let s = dateData.getSeconds()
+    // return { year, month, date, h, m, s }
+    return `${year}-${month}-${date} ${h}:${m} 星期${weekMapping[day]}`;
+  }
+  onSearch = (value) => {
+    console.log(value)
+    this.setState({
+      wd: value
+    })
+    this.getListData()
+  }
+  itemRender = (current, type, originalElement) => {
+    if (type === 'prev') {
+      return <a onClick={this.handlePagination(current)}>Previous</a>;
+    }
+    if (type === 'next') {
+      return <a onClick={this.handlePagination(current)}>Next</a>;
+    }
+    return originalElement;
+  }
   render () {
     const {
       desc, blogList = [],
       tabActive, tabObj, num,
+      dailyData,
+      totalPage,
       blogListTotal = 1
     } = this.state
     const tabList = Object.entries(tabObj)
     return (
       <div>
+        <GlobalHeader />
         <div className="content-box">
+          <GlobalTips dailyData={dailyData} extra={
+            (<span style={{color: 'red'}}>额外信息</span>)
+          }>
+            关注公众平台 ：
+          </GlobalTips>
           {/*文章列表区域*/}
           <div className="article">
             {/*列表展示*/}
             <div className="article-list">
               {/*文章搜索框*/}
+              <Search
+                placeholder="input search text"
+                allowClear
+                enterButton="Search"
+                size="large"
+                onSearch={this.onSearch}
+              />
               <div className="article-box">
                 {/*提示*/}
                 <div className="article-list-tips">
-                  <span className="icon">
-                    <img className="smile-icon" src={smilePng} />
-                  </span>
+                  <InfoCircleOutlined className="icon antd-icon" />
                   <span className="content">
                     <div className="tips">技术文章提示</div>
                     <div className="cont">
@@ -160,7 +225,7 @@ class List extends PureComponent {
                               <div className="extra-info">
                                 <span className="time">
                                   {/*2019-05-29 10:25 星期三*/}
-                                  {item.createTime}
+                                  {this.untilTime(item.createTime)}
                                 </span>
                                 <span className="icon-info">
                                   <img className="icon" src={smilePng} />
@@ -223,6 +288,11 @@ class List extends PureComponent {
                     </div>
                     <span className="next">next</span>
                   </div>
+                  <Pagination
+                    current={num}
+                    total={totalPage}
+                    onChange={this.handlePaginationChange}
+                    itemRender={this.itemRender} />
                 </div>
               </div>
             </div>
@@ -231,6 +301,7 @@ class List extends PureComponent {
             </div>
           </div>
         </div>
+        <GlobalFooter />
       </div>
     )
   }
