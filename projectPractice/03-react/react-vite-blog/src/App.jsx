@@ -4,8 +4,8 @@ import './App.css'
 import '@/assets/reset.less'
 import '@/assets/common.less'
 import Index from '@/pages/index'
-import List from '@/pages/list'
-import Detail from '@/pages/detail'
+import List from '@/pages/list/hooks'
+import Detail from '@/pages/detail/hooks'
 import { BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
 const NoMatch = ({ location }) => (
   <div>
