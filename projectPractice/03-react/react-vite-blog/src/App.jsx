@@ -9,6 +9,7 @@ import rootReducer from '@/store/reducers'
 import Index from '@/pages/index'
 import List from '@/pages/list/hooks'
 import Detail from '@/pages/detail/hooks'
+import { Spin } from 'antd'
 import { BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
 const NoMatch = ({ location }) => (
   <div>
@@ -17,8 +18,13 @@ const NoMatch = ({ location }) => (
     </h3>
   </div>
 );
+export const store = createStore(rootReducer)
 function App() {
-  const store = createStore(rootReducer)
+  const [isLoading, setLoading] = useState(false)
+  const unsubscribe = store.subscribe(() => {
+    const { loading } = store.getState()
+    setLoading(loading)
+  })
   return (
     <Provider store={store}>
       <Router>
@@ -29,8 +35,14 @@ function App() {
           <Route component={NoMatch} />
         </Switch>
       </Router>
+      {
+        isLoading && (
+          <div className='global-loading'>
+            <Spin />
+          </div>
+        )
+      }
     </Provider>
   )
 }
-
 export default App

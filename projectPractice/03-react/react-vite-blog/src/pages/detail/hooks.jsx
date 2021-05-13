@@ -121,7 +121,10 @@ function App (props) {
   );
 }
 const mapStateToProps = state => {
-  return { visibilityFilter: state.visibilityFilter };
+  return {
+    visibilityFilter: state.visibilityFilter,
+    loading: state.loading
+  };
 }
 const mapDispatchToProps = dispatch => ({
   setFilter: (val) => {

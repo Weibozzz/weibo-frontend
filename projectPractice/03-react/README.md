@@ -2,6 +2,8 @@
 - react@17.0.0
 - react-dom@17.0.0
 - node@12.x.x
+- redux
+    - https://www.reduxjs.cn/basics/example
 
 ## npm 更改源
 ```shell script
