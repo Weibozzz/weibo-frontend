@@ -1,4 +1,5 @@
 # 总结
+- 自己动手写，主播自己写的时候都出现各种错误,所以自己不写永远不会提高
 ## npm install
 - -D(--dev--save)   devDependencies
 - -S(--save)   dependencies
