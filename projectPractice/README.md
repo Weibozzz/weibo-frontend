@@ -6,9 +6,9 @@
 ### 01-origin
 用原生写一个几乎和我一样的 [博客](http://www.liuweibo.cn)
 ### 02-vue
-vue 写博客 正在备课讲解
+vue 写博客已完结，待上传
 ### 03-react
-react 写博客 待完成
+react 写博客 源码完成，待讲解
 ### 04-small-project
 一些小项目的运用
 #### 4.1 clock
