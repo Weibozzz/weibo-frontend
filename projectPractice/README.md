@@ -4,9 +4,11 @@
 简单的 `express` 服务，后续用于 `ajax` `jsonp` 等服务学习
 
 ### 01-origin
+[《伟波前端从零基础教学》](https://www.bilibili.com/video/BV1py4y1E79E)
+ 
 用原生写一个几乎和我一样的 [博客](http://www.liuweibo.cn)
 ### 02-vue
-vue 写博客已完结，待上传
+vue 写博客已完结 [《伟波前端Vue实战零基础教学》](https://www.bilibili.com/video/BV11B4y1M7tb)
 ### 03-react
 react 写博客 源码完成，待讲解
 ### 04-small-project
