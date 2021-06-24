@@ -2,6 +2,8 @@
 
 项目地址：<https://github.com/Weibozzz/weibo-frontend>
 
+码云-项目地址(上面如果打不开试试这个)：<https://gitee.com/Weibozzz/weibo-frontend>
+
 前端入门，从今天开始零开始学前端，做一名优秀的前端工程师。
 
 持续更新中。本项目的主要作用有：
@@ -51,7 +53,7 @@
 ### 前端起步教程
 所有从零起步的简单教程 (`原生JS` `Vue` `React`)
 ### projectPractice(项目练习)
-编程这是一个实战，没有练习的学习等于浪费时间浪费生命，等于没学。
+[项目介绍](./projectPractice/README.md) 编程这是一个实战，没有练习的学习等于浪费时间浪费生命，等于没学。
 
 这是前端起步教程项目的配合练习
 ### 视频录播总结
