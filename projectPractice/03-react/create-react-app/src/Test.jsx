@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import  './test.less'
-import style from  './test2.module.less'
+import style from  './test.module.scss'
+import './test.scss'
 
 class App extends  Component{
   constructor() {
@@ -10,10 +10,10 @@ class App extends  Component{
     }
   }
   render(){
-    console.log(this.props)
+    console.log(this.props, style)
     return (
       <div>
-        <h1 className={'red'}>普通 css</h1>
+        <h1 className={'red'}>普通 css </h1>
         <h2 className={style.green}>CSS module</h2>
         {this.props.test}
       </div>
