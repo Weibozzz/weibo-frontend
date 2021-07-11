@@ -39,3 +39,7 @@ css实现3D立方体
 
 ![css3-elm](http://weibozzz.gitee.io/some-imgs/project-gif/elm-car.gif)
 
+### 05-wx-miniprogram
+微信小程序
+
+[项目介绍](./05-wx-miniprogram/README.md) 
