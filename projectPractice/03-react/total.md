@@ -6,7 +6,15 @@
 - componentDidMount
 - componentWillUnmount
 ## 2. state setState
-
+## 3. 其他
+- 动态 style 的写法
+- state setState 用法
+- class => className
+- 注释的写法
+- v-for 的替换方法 map
+- 动态 key 和渲染变量
+- 事件写法 onClick 函数传参的写法
+- vite 区别: less 的引入 ~@ =》 @
 ## 作业
 记得交作业 只看不写等于没学哦，一定要自己写，可以看到我自己写了多遍都有
 各种各样的问题，只有发现了才能解决，先自己尝试写修改不要看我写的，实在不行，
