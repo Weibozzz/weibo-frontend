@@ -18,3 +18,8 @@ css实现3D立方体
 
 ![css3-elm](http://weibozzz.gitee.io/some-imgs/project-gif/elm-car.gif)
 
+## 5 v-clickoutside
+自定义指令-点击区域之外执行
+
+![v-clickoutside](./05-v-clickoutside/v-clickoutside.gif)
+

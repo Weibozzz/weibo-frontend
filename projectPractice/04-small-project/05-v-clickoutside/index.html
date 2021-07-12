@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-clickOutside</title>
+  <style>
+    .out1,.inner{
+      width: 600px;
+      height: 200px;
+      border: 1px solid goldenrod;
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+  <div class="out1">
+    out1
+    <div class="out1">
+      out2
+      <div class="out1">
+        out3
+        <div class="inner" v-clickoutside="handleClick">
+          inner
+          <button>点击我</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data() {
+      return {
+      }
+    },
+    directives: {
+      clickoutside: {
+        bind (el, binding) {
+          console.log('bind')
+          const handler = (e) => {
+            if(el.contains(e.target)){
+              console.warn('点击了区域之内')
+              return false;
+            }
+            binding.value(e)
+          }
+          el._vClickoutside = handler
+          document.addEventListener('click', handler)
+        },
+        // 虚拟dom销毁时自动解绑(切换组件或则手动调用vm.$destroy()方法
+        unbind (el) {
+          console.log('unbind')
+          document.removeEventListener('click', el._vClickoutside)
+          delete el._vClickoutside
+        },
+      }
+    },
+    created () {
+    },
+    mounted () {
+    },
+    methods: {
+      handleClick(e) {
+        console.log('点击了区域之外')
+      }
+    }
+  })
+</script>
+</body>
+</html>
